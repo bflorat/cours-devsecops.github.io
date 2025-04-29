@@ -58,6 +58,16 @@ Ce document est sous licence [Creative Commons Attribution - Partage dans les M�
 backgroundImage: none
 color: #555555
 -->
+# 🤝 Contribuer à ce support
+
+Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github.io/pulls), ce support est _as code_ (sources en Markdown).
+
+<div class="admonition tip">
+  💡 <strong>Note :</strong> Toutes les contributions sur le fond comme sur la forme sont appréciées.
+
+</div>
+
+---
 
 # 🧭 Séance 1 – Panorama des architectures modernes & fondations du DevSecOps (1h20)
 
