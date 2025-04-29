@@ -1,0 +1,25 @@
+@startuml typologie-mainframe-01
+!include <C4/C4_Container>
+LAYOUT_TOP_DOWN()
+
+Person(user, "Utilisateur interne")
+
+System_Boundary(mainframe, "Mainframe IBM z/OS") {
+  Container(cics, "CICS Transaction Server", "Gestion des transactions")
+  Container(db2, "DB2", "Base de données relationnelle")
+  Container(jes, "JES2", "Batch Job Entry Subsystem")
+}
+
+System_Ext(terminal, "Terminal 3270")
+Rel(user, terminal, "utilise")
+Rel(terminal, cics, "Appels 3270")
+
+System_Ext(batchSystem, "Système externe batch")
+Rel(batchSystem, jes, "soumet des jobs")
+
+Rel(cics, db2, "requêtes SQL")
+Rel(jes, db2, "accès aux données")
+
+@enduml
+
+

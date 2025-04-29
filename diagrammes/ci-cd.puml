@@ -1,0 +1,23 @@
+@startuml CI_CD_Modern
+!include <C4/C4_Container>
+LAYOUT_TOP_DOWN()
+
+Person(dev, "Développeur", "Écrit du code, pousse les changements")
+
+System_Boundary(ci_cd, "Chaîne CI/CD") {
+  Container(git, "Dépôt Git", "GitLab / GitHub", "Contient le code source et les pipelines")
+  Container(ci, "Orchestrateur CI/CD", "GitLab CI / Jenkins / CircleCI", "Orchestre les étapes de build, test et déploiement")
+  Container(build, "Outil de build", "Docker / Maven / Gradle", "Construit les artefacts ou images")
+  Container(test, "Outils de test", "JUnit, SonarQube, Trivy", "Exécute les tests de qualité et de sécurité")
+  Container(registry, "Registry", "Docker Hub / GHCR / Harbor / Nexus / Artifactory", "Stocke les images conteneurs ou les binaires")
+  Container(k8s, "Plateforme de déploiement", "Kubernetes", "Déploie et exécute l’application")  
+}
+
+Rel(dev, git, "push")
+Rel(git, ci, "déclenche le pipeline")
+Rel(ci, build, "lance")
+Rel(ci, test, "exécute")
+Rel(ci, registry, "pousse l'image")
+Rel(ci, k8s, "déploie")
+
+@enduml

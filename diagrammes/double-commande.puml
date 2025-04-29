@@ -1,0 +1,10 @@
+```plantuml
+@startuml
+actor Utilisateur
+
+Utilisateur -> "Version Officielle" : Requête
+Utilisateur -> "Version Test (Shadow)" : Requête (copiée)
+
+"Version Officielle" -> Utilisateur : Réponse officielle
+"Version Test (Shadow)" -> "Système de comparaison" : Résultat pour analyse
+@enduml

@@ -1,0 +1,45 @@
+@startuml typologie-n-tiers-04
+!include <C4/C4_Deployment>
+LAYOUT_TOP_DOWN()
+
+Person(user, "Utilisateur interne/externe")
+
+' === Couche Présentation ===
+Node(frontend, "Serveurs Web (présentation)") {
+  Container(app1_ui, "Application A1 - Présentation", "JSP (Java Server Pages)")
+  Container(app2_ui, "Application A2 - Présentation", "PHP")
+}
+
+' === Couche Service ===
+Node(services, "Serveurs applicatifs (couches service / domaine / infra-persistence)") {
+  Container(app1_service, "Application A1 - Services", "Java (Spring)")
+  Container(app2_service, "Application A2 - Services", "PHP Service Layer")
+}
+
+
+' === Couche Données ===
+ContainerDb(base1, "Base A1", "Oracle")
+ContainerDb(base2, "Base A2", "PostgreSQL")
+
+' === Batchs / ETL ===
+Node(serveur_background, "(Optionnel) ETL, serveur de batchs") {
+  Container(background, "ETL (ex: DataStage, Pentaho...), jobs maison...", "Service batch/ETL")
+}
+
+' === Relations utilisateur ===
+Rel(user, app1_ui, "utilise", "HTTP(S)")
+Rel(user, app2_ui, "utilise", "HTTP(S)")
+
+' === Couche présentation → couche service ===
+Rel(app1_ui, app1_service, "appelle", "HTTP interne / RMI / REST")
+Rel(app2_ui, app2_service, "appelle", "HTTP interne / RPC")
+
+' === Couche service → base de données ===
+Rel(app1_service, base1, "requêtes SQL", "sqlnet")
+Rel(app2_service, base2, "requêtes SQL", "pg")
+
+' === Traitements asynchrones ===
+Rel(background, base1, "Synchronisation / chargement / traitements")
+Rel(background, base2, "Synchronisation / chargement / traitements")
+
+@enduml

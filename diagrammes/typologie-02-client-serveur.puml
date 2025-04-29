@@ -1,0 +1,33 @@
+@startuml typologie-client-serveur-02
+!include <C4/C4_Deployment>
+LAYOUT_TOP_DOWN()
+
+Person(user, "Utilisateur interne ou via VPN")
+
+Node(poste, "Windows", "Poste de travail (x n)") {
+  Container(app1, "Application 1" ,"ex: Oracle Forms/ C++ / Delphi / VB6 / PowerBuilder...")  
+  Container(app2, "Application 2" ,"Delphi")  
+}
+
+
+Node(serveur_bdd_1, "Windows", "Serveur application 1") {
+  ContainerDb(base1, "Base de données relationnelle application 1" ,"Oracle RGBD")  
+}
+
+Node(serveur_bdd_2, "Unix", "Serveur application 2") {
+  ContainerDb(base2, "Base de données relationnelle application 2" ,"MySQL")  
+}
+
+Node(serveur_background, "(Optionnel) ETL, serveur de batchs") {
+ Container(background, "ETL (ex: DataStage, Pentaho... ), jobs maison, ..." ,"Service batch/ETL") 
+}
+
+Rel(user, app1, "utilise")
+Rel(user, app2, "utilise")
+Rel(app1, base1, "appelle","protocole TCP/IP de la base")
+Rel(app2, base2, "appelle","protocole TCP/IP de la base")
+Rel(background,base1, "Synchronisation / chargement / traitements")
+Rel(background,base2, "Synchronisation / chargement / traitements")
+
+
+@enduml

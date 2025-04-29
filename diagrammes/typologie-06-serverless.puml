@@ -1,0 +1,47 @@
+@startuml typologie-serverless-06
+!include <C4/C4_Deployment>
+LAYOUT_TOP_DOWN()
+
+Person(user, "Utilisateur interne/externe")
+
+' Frontends
+Container(front1, "Frontal Application F1", "React.js (SPA)")
+Container(front2, "Frontal Application F2", "PHP (serveur side)")
+
+' Serverless functions
+Container(api1, "Function A1 - REST", "AWS Lambda / Azure Function")
+Container(api2, "Function A2 - GraphQL", "AWS Lambda")
+Container(api3, "Function A3 - gRPC façade", "Cloud Function / sans persistance")
+
+' Limited persistence
+ContainerDb(db_api1, "Base A1", "Serverless DB, ex: DynamoDB / Firestore")
+Container(files, "Object Storage", "S3 / Azure Blob Storage")
+
+' Messaging
+ContainerQueue(queue1, "Queue (ex: AWS SQS, Azure Event Grid, GCP Pub/Sub)", "Événements métier (topics)")
+
+' Serverless async job
+Container(job1, "Function - traitement async", "Triggered by Kafka / Scheduler")
+
+' User interactions
+Rel(user, front1, "utilise")
+Rel(user, front2, "utilise")
+
+' Frontend calls
+Rel(front1, api1, "appelle", "HTTPS")
+Rel(front1, api2, "appelle", "HTTPS")
+Rel(front2, api3, "appelle", "HTTPS")
+Rel(front2, api1, "appelle", "HTTPS")
+
+' Function interactions
+Rel(api2, api3, "appelle", "HTTPS")
+Rel(api2, queue1, "produit", "Kafka")
+Rel(api1, queue1, "consomme", "Kafka")
+Rel(job1, queue1, "consomme", "Kafka")
+Rel(job1, api2, "appelle en maj", "HTTPS")
+
+' Selected storage access
+Rel(front1, db_api1, "requêtes", "HTTPS")
+Rel(job1, files, "lit / écrit")
+
+@enduml
