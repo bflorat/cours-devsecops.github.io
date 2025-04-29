@@ -91,16 +91,16 @@ color: #555555
 
 <!-- _class: small -->
 
-✅ **Web**: très simple à déployer
-✅ Architecture **simple**
-✅ **Technologies homogènes**: Utilisation généralement d'un seul langage/framework
-🤔 **Vendor Locking** selon les technologies retenues mais va dans le bon sens (ex: JEE)
-🤔 **Scalabilité** verticale ET horizontale possible mais globale et limitée pour les BDD
-⚠️ **Difficile à maintenir** (couplage fort, code complexe)
-⚠️ **Lourd à démarrer / déployer**
-⚠️ Difficile à tester
-⚠️ Collaboration difficile (conflits de merge...)
-⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
+* ✅ **Web**: très simple à déployer
+* ✅ Architecture **simple**
+* ✅ **Technologies homogènes**: Utilisation généralement d'un seul langage/framework
+* 🤔 **Vendor Locking** selon les technologies retenues mais va dans le bon sens (ex: JEE)
+* 🤔 **Scalabilité** verticale ET horizontale possible mais globale et limitée pour les BDD
+* ⚠️ **Difficile à maintenir** (couplage fort, code complexe)
+* ⚠️ **Lourd à démarrer / déployer**
+* ⚠️ Difficile à tester
+* ⚠️ Collaboration difficile (conflits de merge...)
+* ⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
 
 ---
 
@@ -117,17 +117,17 @@ color: #555555
 
 ## Le n-tiers : avantages / inconvénients 
 
-✅ **Architecture simple**
-✅ **Scalabilité:** Verticale ET horizontale (mais limitée sur les BDD). 
-✅ **Scalabilité individuelle** de chaque tiers (ex: 2 serveurs de présentation, 3 serveur de service)
-✅ **Découplage** présentation / services
-✅ **RH** : Possible d'avoir deux équipes : une frontend et une backend
-🤔 **Testabilité** : Plus simple à tester (ex: bouchonnage du tiers services)
-🤔 **Vendor Locking** : Selon les technologies retenues mais va dans le bon sens (ex: JEE)
-🤔 **Maintenance** quelque fois difficile à maintenir (couplage fort, code complexe dans chaque tiers)
-🤔 **Déploiement**: Peut être lourd à démarrer / déployer
-⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
-⚠️ **Pas de réutilisation** des services par d'autres applications
+* ✅ **Architecture simple**
+* ✅ **Scalabilité:** Verticale ET horizontale (mais limitée sur les BDD). 
+* ✅ **Scalabilité individuelle** de chaque tiers (ex: 2 serveurs de présentation, 3 serveur de service)
+* ✅ **Découplage** présentation / services
+* ✅ **RH** : Possible d'avoir deux équipes : une frontend et une backend
+* 🤔 **Testabilité** : Plus simple à tester (ex: bouchonnage du tiers services)
+* 🤔 **Vendor Locking** : Selon les technologies retenues mais va dans le bon sens (ex: JEE)
+* 🤔 **Maintenance** quelque fois difficile à maintenir (couplage fort, code complexe dans chaque tiers)
+* 🤔 **Déploiement**: Peut être lourd à démarrer / déployer
+* ⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
+* ⚠️ **Pas de réutilisation** des services par d'autres applications
 
 ---
 
@@ -167,19 +167,19 @@ color: #555555
 
 ## Le micro-services : avantages / inconvénients 
 
-✅ **Déploiement indépendant** de chaque service : maj plus fréquentes et ciblées
-✅ **Scalabilité verticale et horizontale granulaire**
-✅ **Autonomie/parallélisation des équipes** : chaque équipe peut développer, tester et déployer son propre service. 
-✅ **Facilité d'évolution** : les services peuvent être remplacés, réécrits ou supprimés 
-✅ **Réutilisation des services** entre applications
-✅ **DEV plus simple** : petits périmètres, plus faciles à comprendre et à tester
-✅ **Peu de vendor locking** : technologies Open Source et standard principalement
-🤔 **Code polyglotte** : **avantage RH** mais aussi un **risque sur la maintenabilité**
-🤔 **Surcoût en infrastructure** : orchestrateurs, API Gateway, monitoring, observabilité...
-🤔 **Tests d'intégration** plus simples mais **tests système** plus complexes
-⚠️ **Architecture complexe** : code plus simple mais intégration plus complexe et nécessite des mécanismes robustes et une gestion des erreurs (rejeux...)
-⚠️ **[Surdimensionné](https://martinfowler.com/bliki/MicroservicePrerequisites.html) et risqué** pour certaines organisations (nécessite DevOps, CI/CD, observabilité, résilience…)
-⚠️ **Consistance des données plus difficile** : chaque service gère sa propre base → cohérence eventualisée
+* ✅ **Déploiement indépendant** de chaque service : maj plus fréquentes et ciblées
+* ✅ **Scalabilité verticale et horizontale granulaire**
+* ✅ **Autonomie/parallélisation des équipes** : chaque équipe peut développer et déployer ses services
+* ✅ **Facilité d'évolution** : les services peuvent être remplacés, réécrits ou supprimés 
+* ✅ **Réutilisation des services** entre applications
+* ✅ **DEV plus simple** : petits périmètres, plus faciles à comprendre et à tester
+* ✅ **Peu de vendor locking** : technologies Open Source et standard principalement
+* 🤔 **Code polyglotte** : **avantage RH** mais aussi un **risque sur la maintenabilité**
+* 🤔 **Surcoût en infrastructure** : orchestrateurs, API Gateway, monitoring, observabilité...
+* 🤔 **Tests d'intégration** plus simples mais **tests système** plus complexes
+* ⚠️ **Architecture complexe** : code plus simple mais intégration plus complexe et nécessite des mécanismes robustes et une gestion des erreurs (rejeux...)
+* ⚠️ **[Surdimensionné](https://martinfowler.com/bliki/MicroservicePrerequisites.html)** pour certaines organisations (nécessite DevOps, CI/CD, observabilité, résilience…)
+* ⚠️ **Consistance des données plus difficile** : chaque service gère sa propre base → cohérence eventualisée
 
 ---
 
@@ -205,16 +205,15 @@ serverless :
 
 ## Le serverless : avantages / inconvénients 
 
-✅ **Plus de scalabilité à gérer, élasticité automatique**, mais **latence à froid**.  
-✅ **Plus d'infrastructure à gérer** et nécessitant des compétences élevées, avec **HA native**.  
-✅ **Autonomie / parallélisation des équipes** : chaque équipe peut développer, tester et déployer son propre service. 
-⚠️ **Vendor-locking** très élevé (forte dépendance aux GAFAM)  
-🤔 **Coût raisonné** en théorie (paiement à l'utilisation) mais impose une surveillance importantes pour éviter les surcoûts  
-🤔 Développement en théorie rapide et simple, mais **débogage complexe** et **risque sur la cohérence globale**  
-⚠️ **Surface d'attaque** plus large, surtout si on multiplie les fournisseurs  
-⚠️ **Architecture complexe** : code plus simple mais intégration plus complexe, nécessitant des mécanismes robustes et une gestion des erreurs (rejeux...).  
-⚠️ **Consistance des données plus difficile** : chaque service gère sa propre base → cohérence eventualisée
-
+* ✅ **Plus de scalabilité à gérer, élasticité automatique**, mais **latence à froid**.  
+* ✅ **Plus d'infrastructure à gérer** et nécessitant des compétences élevées, avec **HA native**.  
+* ✅ **Autonomie / parallélisation des équipes** : chaque équipe peut développer, tester et déployer son propre service. 
+* ⚠️ **Vendor-locking** très élevé (forte dépendance aux GAFAM)  
+* 🤔 **Coût raisonné** en théorie (paiement à l'utilisation) mais impose une surveillance importantes pour éviter les surcoûts  
+* 🤔 Développement en théorie rapide et simple, mais **débogage complexe** et **risque sur la cohérence globale**  
+* ⚠️ **Surface d'attaque** plus large, surtout si on multiplie les fournisseurs  
+* ⚠️ **Architecture complexe** : code plus simple mais intégration plus complexe, nécessitant des mécanismes robustes et une gestion des erreurs (rejeux...).  
+* ⚠️ **Consistance des données plus difficile** : chaque service gère sa propre base → cohérence eventualisée
 
 ---
 

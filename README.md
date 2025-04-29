@@ -12,7 +12,7 @@ Creative Commons Attribution-ShareAlike 4.0 International License.
 ### Preview
 
 ```bash
-npx @marp-team/marp-cli@latest slides.md --template bespoke -p
+npx @marp-team/marp-cli@latest slides.md --template bespoke -p -o index.html
 ```
 
 ### Export en HTML  
