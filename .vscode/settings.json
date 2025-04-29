@@ -1,8 +1,4 @@
 {
-    "cSpell.language": "en,fr",
-    
-    "markdown.marp.themes": [
-          "./theme.css"
-    ]
+    "cSpell.language": "en,fr"
       
 }

@@ -12,12 +12,12 @@ Creative Commons Attribution-ShareAlike 4.0 International License.
 ### Preview
 
 ```bash
-npx @marp-team/marp-cli@latest slides.md --template bare -p
+npx @marp-team/marp-cli@latest slides.md --template bespoke -p
 ```
 
 ### Export en HTML  
 
 ```bash
-npx @marp-team/marp-cli slides.md --html --template bare --allow-local-files -o index.html
+npx @marp-team/marp-cli slides.md --html --template bespoke --allow-local-files -o index.html
 ```
 
