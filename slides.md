@@ -33,11 +33,9 @@ style: |
     border-color: #3498db;
     background: #f0f8ff;
   }
-
   section.small {
     font-size: 1.6em;
   }  
-
   section.smaller {
     font-size: 1.4em;
   }
