@@ -1670,6 +1670,44 @@ pour **accélérer et fiabiliser** le cycle de développement et de déploiement
 | **SRE**                      | Améliorer la fiabilité via l’ingénierie logicielle   | +             | Proactif +++|
 
 
+
+---
+
+# 🛠️ Compétences clés pour devenir DevOps
+<!-- _class: small -->
+
+## ⚙️ Compétences techniques indicatives
+
+- **Langages de programmation** : Python, Go, Bash
+- **Systèmes d'exploitation** : **Linux**, Windows
+- **Conteneurisation & Orchestration** : Docker, Kubernetes
+- **Gestion de configuration** : **Ansible**, Puppet, Chef
+- **CI/CD** : **GitLab CI**, Jenkins, ArgoCD, ...
+- **Infrastructure as Code** : **Terraform**, CloudFormation, Vagrant
+- **Cloud** : AWS, OVH Public Cloud, Azure, GCP, ...
+- **Surveillance & Logs** : Prometheus, Grafana, ELK Stack
+
+Pour les Sysops :
+- **Virtualisation**: Proxmox VE, VMWare ESXi, OpenStack
+
+---
+
+🚀 Prêt à démarrer ?
+
+Guide des technologies à connaître pour devenir DevOps :
+
+👉 [https://roadmap.sh/devops](https://roadmap.sh/devops)
+
+
+---
+
+## 🤝 Compétences humaines
+
+- **Communication & collaboration**
+- **Résolution de problèmes**
+- **Adaptabilité**
+- **Culture DevOps & mindset agile**
+
 ---
 
 ### 🧠 En résumé
@@ -1761,7 +1799,7 @@ Le rôle de l’encadrant inclut également une **responsabilité environnementa
 ## 🎓 3.3 La Formation continue
 
 <div class="admonition <warning">
-  ⚠️ Dans le monde du DevSecOps, les technologies évoluent encore plus vite que dans le domaine du code. Des formations régulières sont indispensables. Prévoir <i>a minima</i> des <b>MOOCs</b> réguliers.
+  ⚠️ Dans le monde du DevSecOps, les technologies évoluent encore plus vite que dans le domaine du code. Des formations régulières sont indispensables. Prévoir <i>a minima</i> des <b>MOOCs</b> (Udemy, Coursera, edX...) réguliers.
 </div>
 
 ### Certifications clés dans le cloud, le DevOps et la sécurité
