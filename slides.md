@@ -350,7 +350,7 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
 
 ---
 
-## les piliers du succès
+## Les piliers du succès
 
 ![](./images/piliers.png)
 
@@ -1001,7 +1001,7 @@ CMD ["npm", "start"]
 - **2ᵉ projet open source** le plus actif (après Linux)
 - **1500+ contributeurs actifs**
 - **70k+ stars** sur GitHub
-- **4000+ entreprises utilisatrices** 
+- **80% des grandes organisations dans le monde** utilisent K8S en 2025 (contre 63% en 2024) ([source CNCF](https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/?utm_source=chatgpt.com))
 
 
 ---
