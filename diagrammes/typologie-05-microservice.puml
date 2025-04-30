@@ -8,7 +8,7 @@ Container(front1, "Frontal Application F1", "React.js (SPA=Single Page Applicati
 Container(front2, "Frontal Application F2", "PHP (SSR= Server Side Rendering)")
 
 Container(api1, "API Rest A1", "")
-Container(api2, "API GraphQl A2", "")
+Container(api2, "API GraphQL A2", "")
 Container(api3, "API gRPC A3", "<sans persistence>")
 ContainerDb(db_api1, "Base A1", "Oracle")
 ContainerDb(db_api2, "Base A2", "PostgreSQL")
