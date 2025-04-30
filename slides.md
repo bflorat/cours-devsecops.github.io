@@ -104,14 +104,13 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 * ✅ **Web**: très simple à déployer
 * ✅ Architecture **simple**
 * ✅ **Technologies homogènes**: Utilisation généralement d'un seul langage/framework
-* 🤔 **Vendor Locking** selon les technologies retenues mais va dans le bon sens (ex: JEE)
-* 🤔 **Scalabilité** verticale ET horizontale possible mais globale et limitée pour les BDD
+* 🌀 **Vendor Locking** selon les technologies retenues mais va dans le bon sens (ex: JEE)
+* 🌀 **Scalabilité** verticale ET horizontale possible mais globale et limitée pour les BDD
 * ⚠️ **Difficile à maintenir** (couplage fort, code complexe)
-* ⚠️ **Lourd à démarrer / déployer**
-* ⚠️ Difficile à tester
 * ⚠️ Collaboration difficile (conflits de merge...)
+* ⚠️ Difficile à tester
 * ⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
-
+* ⚠️ **Lourd à démarrer / déployer**
 ---
 
 ## Le n-tiers (années 2000 - ) 
@@ -132,10 +131,10 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 * ✅ **Scalabilité individuelle** de chaque tiers (ex: 2 serveurs de présentation, 3 serveur de service)
 * ✅ **Découplage** présentation / services
 * ✅ **RH** : Possible d'avoir deux équipes : une frontend et une backend
-* 🤔 **Testabilité** : Plus simple à tester (ex: bouchonnage du tiers services)
-* 🤔 **Vendor Locking** : Selon les technologies retenues mais va dans le bon sens (ex: JEE)
-* 🤔 **Maintenance** quelque fois difficile à maintenir (couplage fort, code complexe dans chaque tiers)
-* 🤔 **Déploiement**: Peut être lourd à démarrer / déployer
+* 🌀 **Maintenance** quelque fois difficile à maintenir (couplage fort, code complexe dans chaque tiers)
+* 🌀 **Vendor Locking** : Selon les technologies retenues mais va dans le bon sens (ex: JEE)
+* 🌀 **Testabilité** : Plus simple à tester (ex: bouchonnage du tiers services)
+* 🌀 **Déploiement**: Peut être lourd à démarrer / déployer. Démarrage à faire dans l'ordre.
 * ⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
 * ⚠️ **Pas de réutilisation** des services par d'autres applications
 
@@ -146,8 +145,7 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 <!-- _class: small -->
 
-![bg left:40% 100%](./images/typologie-n-tiers-04.svg)
-
+![bg left:40% 100%](./images/typologie-microservices-05.svg)
 
 * Découpage par services
 * Organisation autour des capacités métier
@@ -177,16 +175,16 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 ## Le micro-services : avantages / inconvénients 
 
+* ✅ **Facilité d'évolution** : les services peuvent être remplacés, réécrits ou supprimés 
+* ✅ **Autonomie/parallélisation des équipes** : chaque équipe peut développer et déployer ses services
+* ✅ **Réutilisation des services** entre applications
 * ✅ **Déploiement indépendant** de chaque service : maj plus fréquentes et ciblées
 * ✅ **Scalabilité verticale et horizontale granulaire**
-* ✅ **Autonomie/parallélisation des équipes** : chaque équipe peut développer et déployer ses services
-* ✅ **Facilité d'évolution** : les services peuvent être remplacés, réécrits ou supprimés 
-* ✅ **Réutilisation des services** entre applications
 * ✅ **DEV plus simple** : petits périmètres, plus faciles à comprendre et à tester
 * ✅ **Peu de vendor locking** : technologies Open Source et standard principalement
-* 🤔 **Code polyglotte** : **avantage RH** mais aussi un **risque sur la maintenabilité**
-* 🤔 **Surcoût en infrastructure** : orchestrateurs, API Gateway, monitoring, observabilité...
-* 🤔 **Tests d'intégration** plus simples mais **tests système** plus complexes
+* 🌀 **Code polyglotte** : **avantage RH** mais aussi un **risque sur la maintenabilité**
+* 🌀 **Surcoût en infrastructure** : orchestrateurs, API Gateway, monitoring, observabilité...
+* 🌀 **Tests d'intégration** plus simples mais **tests système** plus complexes
 * ⚠️ **Architecture complexe** : code plus simple mais intégration plus complexe et nécessite des mécanismes robustes et une gestion des erreurs (rejeux...)
 * ⚠️ **[Surdimensionné](https://martinfowler.com/bliki/MicroservicePrerequisites.html)** pour certaines organisations (nécessite DevOps, CI/CD, observabilité, résilience…)
 * ⚠️ **Consistance des données plus difficile** : chaque service gère sa propre base → cohérence eventualisée
@@ -203,24 +201,23 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 [Traits principaux](https://www.thoughtworks.com/insights/blog/traits-serverless-architecture/) (source: Thoughtworks) :
 serverless :
 * Faible Barrière à l'entrée
-* Sans hôtes (que l'on gère)
-* Sans états
+* Sans hôtes (que l'on gère soit-même en tout cas)
+* Sans états (Stateless)
 * Élasticité
 * Distribué
-* Orienté événements
-
+* Orienté événements (Event-Driven)
 
 ---
 <!-- _class: smaller -->
 
 ## Le serverless : avantages / inconvénients 
 
-* ✅ **Plus de scalabilité à gérer, élasticité automatique**, mais **latence à froid**.  
-* ✅ **Plus d'infrastructure à gérer** et nécessitant des compétences élevées, avec **HA native**.  
-* ✅ **Autonomie / parallélisation des équipes** : chaque équipe peut développer, tester et déployer son propre service. 
-* ⚠️ **Vendor-locking** très élevé (forte dépendance aux GAFAM)  
-* 🤔 **Coût raisonné** en théorie (paiement à l'utilisation) mais impose une surveillance importantes pour éviter les surcoûts  
-* 🤔 Développement en théorie rapide et simple, mais **débogage complexe** et **risque sur la cohérence globale**  
+* ✅ **Fin de l'infrastructure à gérer** et nécessitant des compétences élevées, avec **HA native**
+* ✅ **Fin de la scalabilité à gérer, élasticité automatique**, mais **latence à froid**.  
+* ✅ **Autonomie / parallélisation des équipes** : chaque équipe peut développer, tester et déployer son propre service 
+* 🌀 **Coût raisonné** en théorie (paiement à l'utilisation) prévoir **surveillance importante** pour éviter les surcoûts
+* 🌀 Développement en théorie rapide et simple, mais **débogage complexe** et **risque sur la cohérence globale**  
+* ⚠️ **Vendor-locking** très élevé (forte dépendance aux GAFAM)
 * ⚠️ **Surface d'attaque** plus large, surtout si on multiplie les fournisseurs  
 * ⚠️ **Architecture complexe** : code plus simple mais intégration plus complexe, nécessitant des mécanismes robustes et une gestion des erreurs (rejeux...).  
 * ⚠️ **Consistance des données plus difficile** : chaque service gère sa propre base → cohérence eventualisée
@@ -228,7 +225,7 @@ serverless :
 ---
 
 <div class="admonition tip">
-  💡 <strong>Note :</strong> Les architectures microservices et serverless représentent **l'état de l'art** au milieu des années 2020.
+  💡 <strong>Note :</strong> Les architectures microservices et serverless représentent <b>l'état de l'art</b> au milieu des années 2020.
 
   * Le serverless est <strong>peu adapté</strong> aux environnements <strong>souverains</strong> (administrations) ou <strong>sensibles</strong>
 
