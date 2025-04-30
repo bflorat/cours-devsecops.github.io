@@ -15,9 +15,12 @@ Creative Commons Attribution-ShareAlike 4.0 International License.
 npx @marp-team/marp-cli@latest slides.md --template bespoke -p -o index.html
 ```
 
-### Export en HTML  
+### Déploiement en HTML  
 
 ```bash
-npx @marp-team/marp-cli slides.md --html --template bespoke --allow-local-files -o index.html
+export COMMIT_HASH=$(git rev-parse --short HEAD)
+export BUILD_DATE=$(date +%Y-%m-%d)
+envsubst < slides.md > slides.generated.md
+npx @marp-team/marp-cli slides.generated.md --html --template bespoke --allow-local-files -o index.html
 ```
 

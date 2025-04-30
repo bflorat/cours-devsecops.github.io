@@ -53,6 +53,8 @@ color: white
 
 Ce document est sous licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) (CC BY-SA 4.0)
 
+Version : ${COMMIT_HASH} du ${BUILD_DATE}
+
 ---
 <!--
 backgroundImage: none
