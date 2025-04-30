@@ -160,15 +160,15 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
  
 ---
 <div class="admonition tip">
-  💡 <strong>Note :</strong> L'architecture microservice a été précédée du <strong>SOA</strong> (Service-Oriented Architecture) dans les années 2000. 
+  💡 <strong>Note :</strong> L'architecture microservice a été précédée du <strong>SOA</strong> (Service-Oriented Architecture) dans les années 2000
   
-  * Le SOA est une architecture similaire mais s'appuie en général sur un Enterprise Service Bus (ESB) centralisé En microservices et non des appels directs (même on trouve en microservices de plus en plus d'API Gateway). 
+  * Le SOA est une architecture similaire mais s'appuie en général sur un Enterprise Service Bus (ESB) centralisé et non des appels directs (même on trouve en architecture microservices de plus en plus d'API Gateway) 
 
-  * En SOA, les WebServices se basaient sur le standard SOAP (et non REST, GraphQL ou gRPC).
+  * En SOA, les WebServices se basaient sur le standard SOAP (et non REST, GraphQL ou gRPC)
   
-  * Les WebServices étaient principalement développés en Java (Java Enterprise Edition = JEE) et non multi-languages (polyglotte).
+  * Les WebServices étaient principalement développés en Java (Java Enterprise Edition = JEE) et non multi-languages (polyglotte)
 
-  * Le SOA était principalement représenté par des solutions propriétaires complexes et coûteuses.
+  * Le SOA était principalement représenté par des solutions propriétaires complexes et coûteuses
 
 </div>
 
