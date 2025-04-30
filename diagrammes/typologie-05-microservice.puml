@@ -21,7 +21,7 @@ user -> front2 : utilise
 Rel(api1,db_api1,"sqlnet")
 Rel(api2,db_api2,"pg")
 
-Rel(front1,api1,"appele", "HTTP(S)")
+Rel(front1,api1,"appelle", "HTTP(S)")
 Rel(front1,api2,"appelle", "HTTP(S)")
 Rel(front2,api3,"appelle", "HTTP(S)")
 Rel(front2,api1,"appelle", "HTTP(S)")
