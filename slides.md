@@ -1003,7 +1003,6 @@ CMD ["npm", "start"]
 - **70k+ stars** sur GitHub
 - **80% des grandes organisations dans le monde** utilisent K8S en 2025 (contre 63% en 2024) ([source CNCF](https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/?utm_source=chatgpt.com))
 
-
 ---
 
 # Pourquoi Kubernetes ?
@@ -1051,6 +1050,7 @@ Source: https://kubernetes.io/docs/concepts/architecture/
 ---
 
 ### 📦 Exemple de déploiement Kubernetes
+<!-- _class: small -->
 
 ```yaml
 apiVersion: apps/v1
@@ -1267,6 +1267,8 @@ export const bucketName = bucket.id;
 
 ## 🧩 Exemple de fichier Kustomize
 
+<!-- _class: small -->
+
 ```yaml
 # production/kustomization.yaml
 
@@ -1319,6 +1321,8 @@ patches:
 ---
 
 ### 👤 Exemple de RBAC dans Kubernetes
+
+<!-- _class: small -->
 
 ```yaml
 # Role : lecture des Pods dans un namespace
@@ -1459,6 +1463,8 @@ deploy-job:
 
 ## 📝 Exemple de Jenkinsfile simple (Déclaratif)
 
+<!-- _class: small -->
+
 ```groovy
 pipeline {
   agent any
@@ -1566,7 +1572,39 @@ pipeline {
 - Informations sur **qui a construit quoi, quand, et avec quoi**
 - Permet l’**auditabilité** complète du build
 
-> Outils : **Syft**, **Cosign attestations**, **CycloneDX**, **in-toto**
+> Outils : **Syft**, **DependencyTrack**, **CycloneDX**,...
+
+---
+
+## 🛠️ Exemple de SBOM au format CycloneDX
+
+<!-- _class: small -->
+```
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "components": [
+    {
+      "type": "library",
+      "name": "spring-boot-starter-web",
+      "version": "3.2.5",
+      "licenses": [
+        { "license": { "id": "Apache-2.0" } }
+      ],
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.2.5"
+    },
+    {
+      "type": "library",
+      "name": "log4j-api",
+      "version": "2.23.1",
+      "licenses": [
+        { "license": { "id": "Apache-2.0" } }
+      ],
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1"
+    },
+    ...
+```
 
 ---
 
