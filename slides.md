@@ -227,7 +227,11 @@ serverless :
 ---
 
 <div class="admonition tip">
-  💡 <strong>Note :</strong> Les architectures microservices et serverless représentent <b>l'état de l'art</b> au milieu des années 2020.
+  💡 <strong>Note :</strong> Les architectures n-tiers, microservices et serverless représentent <b>l'état de l'art</b> actuel.
+
+  * L'architecture microservice est présente de nombreux avantages mais [nécessite](https://martinfowler.com/bliki/MicroservicePrerequisites.html) une force de frappe technique considérable.
+  
+  * Utiliser une architecture n-iers classique en couches/hexagonale +  du servless au besoin pour les projets simples ou les organisations plus modestes. 
 
   * Le serverless est <strong>peu adapté</strong> aux environnements <strong>souverains</strong> (administrations) ou <strong>sensibles</strong>
 
