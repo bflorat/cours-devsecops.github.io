@@ -65,7 +65,6 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 <div class="admonition tip">
   💡 <strong>Note :</strong> Toutes les contributions sur le fond comme sur la forme sont appréciées.
-
 </div>
 
 ---
@@ -997,6 +996,8 @@ CMD ["npm", "start"]
 - **Donné à la CNCF** en 2015
 - Principaux contributeurs : Google, Red Hat, VMware, Microsoft, Amazon
 
+---
+
 #### 📊 Chiffres clés
 
 - **2ᵉ projet open source** le plus actif (après Linux)
@@ -1025,10 +1026,11 @@ CMD ["npm", "start"]
 
 ---
 
-### 🚀 Développement & exploitation cloud-native
+### 🚀 Développement & exploitation
 
 - Déploiement **déclaratif** (YAML, GitOps)  
-- **Scalabilité automatique** selon la charge  
+- **Scalabilité automatique** selon la charge 
+- **Déploiement avancé** : rolling updates
 - **Résilience intégrée** : redémarrage, réplication  
 - **Observabilité native** (logs, métriques, events)
 
@@ -1118,6 +1120,7 @@ spec:
 - "Je veux **2 serveurs** EC2 avec 8 Go de RAM"
 - "Je veux un **load balancer** devant mes pods Kubernetes"
 - "Je veux une **base PostgreSQL** avec sauvegarde quotidienne"
+- "Je veux **4 instances** à tout moment de mon serveur Web et situés sur des noeuds différents
 
 ---
 
@@ -1194,11 +1197,11 @@ resource "aws_instance" "web" {
 
 
 <div class="admonition info">
-  ℹ️ Ces outils permettent de <strong>configurer et maintenir l’état des serveurs</strong>, une fois provisionnés par des outils d'IaC de provisionnement comme Terraform ou Pulumi.
+  ℹ️ Ces outils permettent de <strong>configurer et maintenir l’état des serveurs</strong>, une fois provisionnés par des outils d'IaC de provisionnement comme Terraform ou Pulumi
 </div>
 
 <div class="admonition info">
-  💡 Une <strong>approche conteneurs</strong> (voir plus loin) reste <strong>préférable</strong> si supportée.
+  💡 Une <strong>approche conteneurs</strong> (voir plus loin) reste <strong>préférable</strong> si supportée
 </div>
 
 
@@ -1250,7 +1253,7 @@ export const bucketName = bucket.id;
 | Outil         | Rôle principal                              | Particularités                              |
 |---------------|----------------------------------------------|----------------------------------------------|
 | **Dockerfile**| Décrit l’image du conteneur                  | Définition du build, base de tout conteneur  |
-| **Docker Compose** | Décrit des stacks multi-conteneurs en local | Idéal pour le dev, moins adapté à la prod    |
+| **Docker Compose** | Décrit des stacks multi-conteneurs en local | Idéal pour le DEV, moins adapté à la PROD|
 | **Helm**      | Gestion de packages Kubernetes (charts)      | Templating puissant, logique de versionnage  |
 | **Kustomize** | Overlays et variantes d’objets Kubernetes    | Natif K8s, sans langage de templating        |
 | **CDK8s**     | IaC Kubernetes via des langages de programmation | Basé sur JS/TS/Python, alternative à YAML (jeune)  |
@@ -1293,31 +1296,31 @@ patches:
 ---
 ## 🔐 2.4 Notions de déploiement sécurisé
 
-> Un déploiement sécurisé repose sur plusieurs **couches complémentaires** de protection.
+> Un déploiement sécurisé repose sur plusieurs **couches complémentaires** de protection
 
 ---
 
 ### 🧾 Gestion des secrets
 
-- Ne jamais stocker de secrets (jetons, clés...) en clair dans le code source.
-- Utiliser des outils dédiés : **Vault**, **Sealed Secrets**, **AWS Secrets Manager**.
-- Injecter les secrets via des variables d’environnement ou des volumes sécurisés.
+- Ne jamais stocker de secrets (jetons, clés...) en clair dans le code source
+- Utiliser des outils dédiés : **Vault**, **Sealed Secrets**, **AWS Secrets Manager**
+- Injecter les secrets via des variables d’environnement ou des volumes sécurisés
 
 ---
 
 ### 🌐 Réseaux et isolation
 
-- Séparer les flux réseau : **externe / interne / administration**.
-- Appliquer des politiques de réseau (ex. : **NetworkPolicy**, **Security Groups**).
-- Réduire la surface d’exposition des services (ex. : ingress, firewall, proxy).
+- Segmenter (VLAN) les flux réseau : **externe / interne / administration**
+- Appliquer des politiques de réseau (ex. : **NetworkPolicy**)
+- Réduire la surface d’exposition des services (ex. : ingress, firewall, proxy)
 
 ---
 
 ### 👤 Contrôle d'accès basé sur les rôles (RBAC)
 
-- Appliquer le principe du **moindre privilège**.
+- Appliquer le principe du **moindre privilège**
 - Définir les rôles avec précision : développeur, opérateur, administrateur, observateur...
-- Implémenter le RBAC au niveau de **Kubernetes**, du **cloud**, des **pipelines CI/CD** et des **registries**.
+- Implémenter le RBAC au niveau de **Kubernetes**, du **cloud**, des **pipelines CI/CD** et des **registries**
 
 ---
 
@@ -1358,7 +1361,7 @@ roleRef:
 ### 🔄 2.5 La CI / CD
 
 > La CI/CD automatise la **construction, les tests et le déploiement** des applications,  
-> afin de **livrer plus vite**, **plus souvent**, et **avec plus de fiabilité**.
+> afin de **livrer plus vite**, **plus souvent**, et **avec plus de fiabilité**
 
 ![bg right:40% 100%](./images/CI_CD_Modern.svg)
 
@@ -1381,12 +1384,12 @@ roleRef:
 
 🚀 **GitLab CI/CD** = système d’intégration et de déploiement continu intégré à GitLab
 
-- 📦 Exécute des **pipelines** dès qu’un commit/push/MR est effectué  
-- 📜 Décrit les étapes dans un fichier `.gitlab-ci.yml` à la racine du dépot  
-- 🧱 Utilise des **jobs** parallélisables, organisés en **stages** (build, test, deploy...) en série
-- ⚙️ Les scripts exécutés par les jobs sont simplement des commandes bash (simple et puissant)
+- Exécute des **pipelines** dès qu’un commit/push/MR est effectué  
+- Décrit le pipeline dans un fichier `.gitlab-ci.yml` à la racine du dépôt  
+- Utilise des **jobs** parallélisables, organisés en **stages** (build, test, deploy...) en série
+- Les scripts exécutés par les jobs sont simplement des commandes bash (simple et puissant)
 
-🧑‍💻 Fonctionne avec des **runners** auto-hébergés ou cloud. En général, les **jobs** sont exécutés sous la forme de **conteneurs** (beaucoup plus reproductible).
+🧑‍💻 Fonctionne avec des **runners** auto-hébergés ou cloud. En général, les **jobs** sont exécutés sous la forme de **conteneurs** (beaucoup plus reproductible)
 
 ---
 
@@ -1504,7 +1507,7 @@ pipeline {
 ![width:700px](./images/qualimetrie.png)
 
 <div class="admonition tip">
-  💡 Utilisez le <b>plugin Sonarlint</b> sur votre IDE pour améliorer votre code avant même d'être commité.
+  💡 Utilisez le <b>plugin Sonarlint</b> sur votre IDE pour améliorer votre code avant même d'être commité
 </div>
 
 ---
@@ -1512,14 +1515,14 @@ pipeline {
 ### 🚀 CD – Déploiement Continu (*Continuous Delivery / Deployment*)
 
 - **Continuous Delivery** : le code est toujours prêt à être déployé (déploiement manuel)
-- **Continuous Deployment** : le code validé est déployé automatiquement (en environnement de test voire en production)
+- **Continuous Deployment** : le code validé est déployé automatiquement (en environnement de test voire en production pour les organisations très matures)
 
 ---
 
 ## 🛡️ Ajout de sécurité dans les pipelines CI/CD
 
 > L’intégration de la sécurité dans la chaîne CI/CD est un pilier de l’approche **DevSecOps**  
-> Elle permet de détecter les failles **tôt**, **automatiquement**, et **de manière répétable**.
+> Elle permet de détecter les failles **tôt**, **automatiquement**, et **de manière répétable**
 
 ---
 <!-- _class: small -->
@@ -1649,17 +1652,22 @@ Comment intégrer une analyse SCA d'un logiciel JavaScript dans un pipeline ?
 📚 Compétences clés : outils de build, dépendances, sécurité logicielle, veille technologique
 
 ---
+<!-- _class: small -->
 
 ### 🖥️ Métier : Intégrateur d’exploitation / SysOps
 
-> 🎯 **Objectif principal** : Assurer le bon fonctionnement quotidien des systèmes informatiques
+> 🎯 **Objectif principal** : Assurer le bon fonctionnement quotidien des systèmes informatiques en environnement Cloud 
+
+<div class="admonition tip">
+  💡 Le SysOps est l'évolution naturelle du SysAdmin dans un environnement cloud.
+</div>
 
 #### 🛠️ Activités principales
 
 - Surveille et gère les systèmes, services et applications
 - Résout les incidents et problèmes techniques au quotidien
 - Met en œuvre les **mises à jour** et **correctifs**
-- Exécute des opérations manuelles ou planifiées d’**Infrastructure as Code (IaC)**
+- Code et exécute des opérations manuelles ou planifiées d’**Infrastructure as Code (IaC)**
 - Gère les **sauvegardes** et les **restaurations**
 - Collabore avec les équipes DEV pour planifier les déploiements
 - Maintient la **documentation opérationnelle**
@@ -1685,8 +1693,7 @@ Comment intégrer une analyse SCA d'un logiciel JavaScript dans un pipeline ?
 ### 🔄 Métier : Ingénieur DevOps/DevSecOps
 <!-- _class: small -->
 
-> 🎯 **Objectif principal** :  Favoriser la collaboration entre les équipes **développement** et **exploitation** (SysOps, SRE…),  
-pour **accélérer et fiabiliser** le cycle de développement et de déploiement logiciel
+> 🎯 **Objectif principal** :  Favoriser la collaboration entre les équipes **développement** et **exploitation** (SysOps, SRE…), pour **accélérer et fiabiliser** le cycle de développement et de déploiement logiciel
 
 #### 🛠️ Activités principales
 
@@ -1709,7 +1716,6 @@ pour **accélérer et fiabiliser** le cycle de développement et de déploiement
 | **SRE**                      | Améliorer la fiabilité via l’ingénierie logicielle   | +             | Proactif +++|
 
 
-
 ---
 
 # 🛠️ Compétences clés pour devenir DevOps
@@ -1726,7 +1732,7 @@ pour **accélérer et fiabiliser** le cycle de développement et de déploiement
 - **Cloud** : AWS, OVH Public Cloud, Azure, GCP, ...
 - **Surveillance & Logs** : Prometheus, Grafana, ELK Stack
 
-Pour les Sysops :
+Pour les SysOps :
 - **Virtualisation**: Proxmox VE, VMWare ESXi, OpenStack
 
 ---
@@ -1742,18 +1748,18 @@ Guide des technologies à connaître pour devenir DevOps :
 
 ## 🤝 Compétences humaines
 
-- **Communication & collaboration**
-- **Résolution de problèmes**
-- **Adaptabilité**
-- **Culture DevOps & mindset agile**
+- Communication & collaboration
+- Résolution de problèmes
+- Adaptabilité
+- Culture DevOps & mindset agile
 
 ---
 
 ### 🧠 En résumé
 
 - L’**intégrateur applicatif** agit **en amont**, sur la qualité des dépendances
-- Le **SysOps** assure **la continuité de service** au quotidien
-- Le **DevOps**/**DevSecOps** crée **les ponts et les automatismes** entre DEV et OPS
+- Le **SysOps** assure **la continuité de service** au quotidien dans le cloud
+- Le **DevOps**/**DevSecOps** crée **les ponts et les automatismes** entre Devs et Ops
 - Le **SRE** agit en **ingénieur de la fiabilité**, avec des outils et une culture de production avancée
 
 ---
@@ -1829,7 +1835,7 @@ En tant que futur encadrant, vous serez également responsable :
 Le rôle de l’encadrant inclut également une **responsabilité environnementale** :
 
 - **Réduire** les volumes de **logs**, **métriques** et **traces** à l’essentiel  
-- **Limiter la durée de conservation** des données de monitoring  
+- **Limiter la durée de conservation** des données de monitoring et sauvegardes 
 - **Éviter la redondance fonctionnelle** entre outils  
 - **Favoriser des solutions sobres** en énergie et en ressources
 
@@ -1933,7 +1939,7 @@ Il faut un leadership technique conscient et engagé
 -  Sécurité = qualité → **intégrée dès le départ** (« Shift to the Left »)  
 -  **User stories** incluant sécurité (ex : rôles, gestion des données sensibles)  
 -  Vérifications automatiques SAST/DAST/SCA dans **CI/CD** 
--  **Formation continue** : Capture The Flag (CTF) internes, katas sécurité (cas d'école à corriger), retours d’incidents; ...
+-  **Formation continue** : Capture The Flag (CTF) internes, katas sécurité (cas d'école à corriger), analyse de post-mortems, ...
 
 ---
 
@@ -1951,8 +1957,8 @@ Il faut un leadership technique conscient et engagé
 
 -  Cultiver un climat de confiance : “on peut parler de faille sans crainte”, **blameless**.
 -  Rendre la sécurité **visible** : KPIs, alertes, dashboards  
--  Défendre les chantiers sécurité/dette technique face aux priorités business  
--  Valoriser les efforts invisibles autour de la sécurité
+-  Défendre les **chantiers sécurité/dette technique** face aux priorités business  
+-  **Valoriser les efforts invisibles** autour de la sécurité
 
 ---
 
@@ -1993,4 +1999,4 @@ Il faut un leadership technique conscient et engagé
 - [DevSecOps.org](https://www.devsecops.org) : principes, pratiques, retours terrain  
 - [CNCF Security TAG](https://github.com/cncf/tag-security) : bonnes pratiques cloud native  
 - [HackTricks](https://book.hacktricks.xyz/) : encyclopédie sécurité offensive/défensive  
-- [Cybrary, Root Me, TryHackMe...] : entraînement pratique (CTF, labs)
+- Cybrary, Root Me, TryHackMe... : entraînement pratique (CTF, labs)
