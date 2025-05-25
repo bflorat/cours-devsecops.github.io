@@ -82,7 +82,7 @@ section.smaller {
 <h1 id="introduction-au-devsecops">Introduction au DevSecOps</h1>
 <h2 id="universit%C3%A9-de-nantes-miage-m2">Université de Nantes, MIAGE, M2</h2>
 <p>Ce document est sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International</a> (CC BY-SA 4.0)</p>
-<p>Version : ccba097 du 2025-05-25</p>
+<p>Version : 169f345 du 2025-05-25</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
   width: 1280px;
@@ -3256,7 +3256,7 @@ section.smaller {
 <ul>
 <li>Ateliers</li>
 </ul>
-<p><img class="emoji" draggable="false" alt="🤝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f91d.svg" data-marp-twemoji=""/> <strong>Partager les responsabilités</strong></p>
+<p><img class="emoji" draggable="false" alt="🤝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f91d.svg" data-marp-twemoji=""/> <strong>Partager les responsabilités</strong>, culture du <strong>blameless</strong>.</p>
 <p><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> <strong>Casser les carcans</strong></p>
 <ul>
 <li>Les devs exploitent (<strong>You build it, you run it</strong> » Amazon)</li>
@@ -4068,7 +4068,7 @@ section.smaller {
 <h3 id="%F0%9F%A4%96-automatiser-presque-tout"><img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f916.svg" data-marp-twemoji=""/> Automatiser (presque) tout</h3>
 <p><strong>Principe :</strong><br />
 Automatiser le <strong>déploiement</strong>, le <strong>rollback</strong>, le <strong>provisionnement</strong>, etc.</p>
-<h4 id="object">Object</h4>
+<h4 id="objectifs">Objectifs</h4>
 <ul>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Gagner en <strong>fiabilité</strong> et en <strong>rapidité</strong></li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Réduire les erreurs humaines</li>
@@ -4151,6 +4151,9 @@ section.smaller {
 <li>Pas besoin d'automatiser <strong>absolument tout</strong> !</li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Autoriser quelques actions manuelles <strong>quand le coût d'automatisation est supérieur au gain attendu</strong></li>
 </ul>
+<div class="admonition tip">
+  Voir <a href='https://sre.google/workbook/eliminating-toil/'>cette section</a> de "The Site Reliability Workbook" de Google.
+</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
   width: 1280px;
@@ -4223,14 +4226,14 @@ section.smaller {
   font-size: 1.2em;
 }
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
-<h2 id="%F0%9F%94%80-organisation-en-branches-recommand%C3%A9e"><img class="emoji" draggable="false" alt="🔀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f500.svg" data-marp-twemoji=""/> Organisation en branches recommandée</h2>
+<h2 id="%F0%9F%94%80-la-gestion-des-branches-en-tbd"><img class="emoji" draggable="false" alt="🔀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f500.svg" data-marp-twemoji=""/> La gestion des branches en TBD</h2>
 <ul>
 <li>Approche Trunk-Based Development (<strong>TBD</strong>) + <strong>FF</strong> (Feature Flags)</li>
 <li><strong>Une seule branche</strong> (ex : <code>main</code>)</li>
 <li>Branches temporaires pour les <strong>Merge Requests (topics)</strong>  uniquement (durée de vie de quelques heures à quelques jours)</li>
-<li>Feature-Flags pour activer/désactiver facilement les nouvelles fonctionnalités.</li>
+<li>Feature-Flags pour activer/désactiver facilement les nouvelles fonctionnalités</li>
 <li>Objectif : simplifier l'intégration, <strong>réduire les conflits</strong> et écarts</li>
-<li>Configurer le <strong>Fast-Forward only</strong> (impose les rebases) pour faciliter la lecture de l'historique.</li>
+<li>Configurer le <strong>Fast-Forward only</strong> (impose les rebases) pour faciliter la lecture de l'historique</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
@@ -4307,7 +4310,7 @@ section.smaller {
 <h3 id="%F0%9F%90%A4-canary-testing"><img class="emoji" draggable="false" alt="🐤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f424.svg" data-marp-twemoji=""/> Canary Testing</h3>
 <p><strong>Définition :</strong><br />
 Déploiement progressif d'une nouvelle version logicielle à une fraction restreinte des utilisateurs (les « canaries ») pour détecter rapidement les anomalies.</p>
-<h2 id="objectifs">Objectifs</h2>
+<h2 id="objectifs-1">Objectifs</h2>
 <ul>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Détecter précocement les anomalies en prod</li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Minimiser les risques lors des déploiements</li>
@@ -4471,11 +4474,11 @@ section.smaller {
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
 <h3 id="%F0%9F%8C%91-dark-deployment"><img class="emoji" draggable="false" alt="🌑" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f311.svg" data-marp-twemoji=""/> Dark Deployment</h3>
 <p><strong>Définition :</strong><br />
-Déploiement d'une nouvelle version en production <strong>sans l'exposer</strong> aux utilisateurs finaux.</p>
-<h4 id="objectifs-1">Objectifs</h4>
+Déploiement d'une nouvelle version ou de nouveaux modules en production <strong>sans les exposer</strong> aux utilisateurs finaux</p>
+<h4 id="objectifs-2">Objectifs</h4>
 <ul>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Tester l'infrastructure et les performances</li>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Identifier les problèmes cachés avant activation</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Identifier les problèmes d'intégration en avance de phase</li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Préparer un basculement rapide (feature toggle)</li>
 </ul>
 </section>
@@ -4550,18 +4553,18 @@ section.smaller {
   font-size: 1.2em;
 }
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
+<h3 id="%F0%9F%94%B5%F0%9F%9F%A2-blue-green-deployment"><img class="emoji" draggable="false" alt="🔵" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f535.svg" data-marp-twemoji=""/><img class="emoji" draggable="false" alt="🟢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" data-marp-twemoji=""/> Blue-Green Deployment</h3>
+<p><strong>Définition :</strong><br />
+Technique de déploiement où <strong>deux environnements identiques</strong> (Blue et Green) sont utilisés pour minimiser les interruptions</p>
 <h4 id="fonctionnement-1">Fonctionnement</h4>
 <ol>
-<li>Déploiement en &quot;ombre&quot; en parallèle de l'ancien système</li>
-<li>Surveillance du comportement en production</li>
-<li>Activation ultérieure via un switch contrôlé (ex: feature flag)</li>
+<li><strong>Blue</strong> : environnement en production actuel</li>
+<li><strong>Green</strong> : nouvelle version déployée en parallèle</li>
+<li>Test sur Green → bascule du trafic → mise à jour terminée !</li>
 </ol>
-<h4 id="avantages-1">Avantages</h4>
-<ul>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Réduit les risques avant l'exposition</li>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Permet des tests réalistes en conditions réelles</li>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Améliore la qualité des mises en production</li>
-</ul>
+<div class="admonition tip">
+  Le déploiement suivant sera donc en Green -&gt; Blue
+</div>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
   width: 1280px;
@@ -4634,98 +4637,16 @@ section.smaller {
   font-size: 1.2em;
 }
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
-<h3 id="%F0%9F%94%B5%F0%9F%9F%A2-blue-green-deployment"><img class="emoji" draggable="false" alt="🔵" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f535.svg" data-marp-twemoji=""/><img class="emoji" draggable="false" alt="🟢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f7e2.svg" data-marp-twemoji=""/> Blue-Green Deployment</h3>
-<p><strong>Définition :</strong><br />
-Technique de déploiement où <strong>deux environnements identiques</strong> (Blue et Green) sont utilisés pour minimiser les interruptions.</p>
-<h4 id="fonctionnement-2">Fonctionnement</h4>
-<ol>
-<li><strong>Blue</strong> : environnement en production actuel</li>
-<li><strong>Green</strong> : nouvelle version déployée en parallèle</li>
-<li>Test sur Green → bascule du trafic → mise à jour terminée !</li>
-</ol>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
-  width: 1280px;
-  height: 720px;
-  font-size: 28px;
-}
-@page {
-  size: 1280px 720px;
-  margin: 0;
-}
-section .admonition {
-  border-left: 4px solid #999;
-  padding: 0.75em 1em;
-  margin: 1.5em 0;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  font-size: 0.80em;
-}
-section .admonition.tip {
-  border-color: #2ecc71;
-  background: #f0fff0;    
-}
-section .admonition.warning {
-  border-color: #e67e22;
-  background: #fffaf0;
-}
-section .admonition.info {
-  border-color: #3498db;
-  background: #f0f8ff;
-}
-section.small {
-  font-size: 1.4em;
-}  
-section.smaller {
-  font-size: 1.2em;
-}
-" lang="en-US" data-marpit-pagination="49" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--style:section {
-  width: 1280px;
-  height: 720px;
-  font-size: 28px;
-}
-@page {
-  size: 1280px 720px;
-  margin: 0;
-}
-section .admonition {
-  border-left: 4px solid #999;
-  padding: 0.75em 1em;
-  margin: 1.5em 0;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  font-size: 0.80em;
-}
-section .admonition.tip {
-  border-color: #2ecc71;
-  background: #f0fff0;    
-}
-section .admonition.warning {
-  border-color: #e67e22;
-  background: #fffaf0;
-}
-section .admonition.info {
-  border-color: #3498db;
-  background: #f0f8ff;
-}
-section.small {
-  font-size: 1.4em;
-}  
-section.smaller {
-  font-size: 1.2em;
-}
-;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
-<h4 id="objectifs-2">Objectifs</h4>
+<h4 id="objectifs-3">Objectifs</h4>
 <ul>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Déployer sans downtime</li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Pouvoir revenir rapidement à l'ancienne version en cas de problème</li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Sécuriser les mises en production</li>
 </ul>
-<h4 id="avantages-2">Avantages</h4>
+<h4 id="avantages-1">Avantages</h4>
 <ul>
 <li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Bascule instantanée</li>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Rollback facile et rapide</li>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Amélioration de la fiabilité et de l'expérience utilisateur</li>
+<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Rollback facile et rapide (hors données)</li>
 </ul>
 <div class="admonition warning">
   ⚠️ Challenges au niveau des évolutions des modèles de données et de leur compatibilité...
@@ -4766,7 +4687,7 @@ section.small {
 section.smaller {
   font-size: 1.2em;
 }
-" lang="en-US" class="smaller" data-marpit-pagination="50" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:smaller;--style:section {
+" lang="en-US" class="smaller" data-marpit-pagination="49" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:smaller;--style:section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -4801,7 +4722,7 @@ section.small {
 section.smaller {
   font-size: 1.2em;
 }
-;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/double-commande.svg&quot;);background-size:500px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="50" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="smaller" data-style="section {
+;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/double-commande.svg&quot;);background-size:500px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="49" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="smaller" data-style="section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -4836,7 +4757,7 @@ section.small {
 section.smaller {
   font-size: 1.2em;
 }
-" lang="en-US" class="smaller" data-marpit-pagination="50" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:smaller;--style:section {
+" lang="en-US" class="smaller" data-marpit-pagination="49" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:smaller;--style:section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -4877,7 +4798,7 @@ section.smaller {
 <p><strong>Définition :</strong><br />
 Technique où <strong>le trafic utilisateur est dupliqué</strong> vers une nouvelle version sans impacter la réponse envoyée.</p>
 
-<h4 id="objectifs-3">Objectifs</h4>
+<h4 id="objectifs-4">Objectifs</h4>
 <ul>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Valider le comportement de la nouvelle version</li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Comparer les résultats avec l'ancienne version</li>
@@ -4919,7 +4840,92 @@ section.small {
 section.smaller {
   font-size: 1.2em;
 }
-" lang="en-US" class="smaller" data-marpit-pagination="50" style="color:#555555;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
+" lang="en-US" class="smaller" data-marpit-pagination="49" style="color:#555555;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
+  width: 1280px;
+  height: 720px;
+  font-size: 28px;
+}
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+section .admonition {
+  border-left: 4px solid #999;
+  padding: 0.75em 1em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 0.80em;
+}
+section .admonition.tip {
+  border-color: #2ecc71;
+  background: #f0fff0;    
+}
+section .admonition.warning {
+  border-color: #e67e22;
+  background: #fffaf0;
+}
+section .admonition.info {
+  border-color: #3498db;
+  background: #f0f8ff;
+}
+section.small {
+  font-size: 1.4em;
+}  
+section.smaller {
+  font-size: 1.2em;
+}
+" lang="en-US" data-marpit-pagination="50" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--style:section {
+  width: 1280px;
+  height: 720px;
+  font-size: 28px;
+}
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+section .admonition {
+  border-left: 4px solid #999;
+  padding: 0.75em 1em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 0.80em;
+}
+section .admonition.tip {
+  border-color: #2ecc71;
+  background: #f0fff0;    
+}
+section .admonition.warning {
+  border-color: #e67e22;
+  background: #fffaf0;
+}
+section .admonition.info {
+  border-color: #3498db;
+  background: #f0f8ff;
+}
+section.small {
+  font-size: 1.4em;
+}  
+section.smaller {
+  font-size: 1.2em;
+}
+;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
+<h4 id="fonctionnement-2">Fonctionnement</h4>
+<ol>
+<li>Le trafic réel est envoyé aux deux versions</li>
+<li>Seule la réponse de la version officielle est utilisée</li>
+<li>Les réponses sont comparées en interne</li>
+</ol>
+<h4 id="avantages-2">Avantages</h4>
+<ul>
+<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Permet de vérifier l'intégration (configuration, tuning...)</li>
+<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Tests réalistes en conditions de production</li>
+<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Aucune perturbation pour les utilisateurs</li>
+<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Détection précoce d'erreurs ou de régressions fonctionnelles</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -4990,18 +4996,17 @@ section.smaller {
   font-size: 1.2em;
 }
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
-<h4 id="fonctionnement-3">Fonctionnement</h4>
-<ol>
-<li>Le trafic réel est envoyé aux deux versions</li>
-<li>Seule la réponse de la version officielle est utilisée</li>
-<li>Les réponses sont comparées en interne</li>
-</ol>
-<h4 id="avantages-3">Avantages</h4>
+<h2 id="%F0%9F%9A%80-gitops"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f680.svg" data-marp-twemoji=""/> GitOps</h2>
+<p><strong>Définition :</strong><br />
+Approche où <strong>Git est la source unique de vérité</strong> pour décrire l'état désiré d'un système, souvent pour du déploiement cloud/Kubernetes.</p>
+<blockquote>
+<p><strong>Si ce n’est pas dans Git, ÇA N'EXISTE PAS !</strong></p>
+</blockquote>
+<h3 id="fonctionnement-3">Fonctionnement</h3>
 <ul>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Permet de vérifier l'intégration (configuration, tuning...)</li>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Tests réalistes en conditions de production</li>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Aucune perturbation pour les utilisateurs</li>
-<li><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cc.svg" data-marp-twemoji=""/> Détection précoce d'erreurs ou de régressions fonctionnelles</li>
+<li>Les configurations (infra, apps) sont <strong>stockées dans Git</strong></li>
+<li>Les modifications sont faites par <strong>pull | merge requests</strong> (PR/MR)</li>
+<li>Les personnes sont identifiées via un <strong>compte dédié</strong>, pas un compte de service</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
@@ -5075,89 +5080,6 @@ section.smaller {
   font-size: 1.2em;
 }
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
-<h2 id="%F0%9F%9A%80-gitops"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f680.svg" data-marp-twemoji=""/> GitOps</h2>
-<p><strong>Définition :</strong><br />
-Approche où <strong>Git est la source unique de vérité</strong> pour décrire l'état désiré d'un système, souvent pour du déploiement cloud/Kubernetes.</p>
-<blockquote>
-<p><strong>Si ce n’est pas dans Git, ÇA N'EXISTE PAS !</strong></p>
-</blockquote>
-<h3 id="fonctionnement-4">Fonctionnement</h3>
-<ul>
-<li>Les configurations (infra, apps) sont <strong>stockées dans Git</strong></li>
-<li>Les modifications sont faites par <strong>pull | merge requests</strong> (PR/MR)</li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
-  width: 1280px;
-  height: 720px;
-  font-size: 28px;
-}
-@page {
-  size: 1280px 720px;
-  margin: 0;
-}
-section .admonition {
-  border-left: 4px solid #999;
-  padding: 0.75em 1em;
-  margin: 1.5em 0;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  font-size: 0.80em;
-}
-section .admonition.tip {
-  border-color: #2ecc71;
-  background: #f0fff0;    
-}
-section .admonition.warning {
-  border-color: #e67e22;
-  background: #fffaf0;
-}
-section .admonition.info {
-  border-color: #3498db;
-  background: #f0f8ff;
-}
-section.small {
-  font-size: 1.4em;
-}  
-section.smaller {
-  font-size: 1.2em;
-}
-" lang="en-US" data-marpit-pagination="53" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--style:section {
-  width: 1280px;
-  height: 720px;
-  font-size: 28px;
-}
-@page {
-  size: 1280px 720px;
-  margin: 0;
-}
-section .admonition {
-  border-left: 4px solid #999;
-  padding: 0.75em 1em;
-  margin: 1.5em 0;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  font-size: 0.80em;
-}
-section .admonition.tip {
-  border-color: #2ecc71;
-  background: #f0fff0;    
-}
-section .admonition.warning {
-  border-color: #e67e22;
-  background: #fffaf0;
-}
-section .admonition.info {
-  border-color: #3498db;
-  background: #f0f8ff;
-}
-section.small {
-  font-size: 1.4em;
-}  
-section.smaller {
-  font-size: 1.2em;
-}
-;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
 <h3 id="%F0%9F%9A%80-gitops---avantages"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f680.svg" data-marp-twemoji=""/> GitOps - Avantages</h3>
 <ul>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Déploiements traçables et auditables</li>
@@ -5166,7 +5088,7 @@ section.smaller {
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Séparation claire entre développement et opérations</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-marpit-fragments="2" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="small" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-marpit-fragments="2" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="smaller" data-style="section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -5201,7 +5123,7 @@ section.small {
 section.smaller {
   font-size: 1.2em;
 }
-" lang="en-US" class="small" data-marpit-pagination="54" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:small;--style:section {
+" lang="en-US" class="smaller" data-marpit-pagination="53" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:smaller;--style:section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -5250,7 +5172,87 @@ Privilégier des <strong>standards explicites</strong> et les valeurs par défau
 <ul>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Simplifier les décisions techniques</li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Gagner en <strong>productivité</strong> et en <strong>prévisibilité</strong></li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Accélère le <strong>onboarding</strong></li>
 <li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Réduire les erreurs et les écarts de pratique</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
+  width: 1280px;
+  height: 720px;
+  font-size: 28px;
+}
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+section .admonition {
+  border-left: 4px solid #999;
+  padding: 0.75em 1em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 0.80em;
+}
+section .admonition.tip {
+  border-color: #2ecc71;
+  background: #f0fff0;    
+}
+section .admonition.warning {
+  border-color: #e67e22;
+  background: #fffaf0;
+}
+section .admonition.info {
+  border-color: #3498db;
+  background: #f0f8ff;
+}
+section.small {
+  font-size: 1.4em;
+}  
+section.smaller {
+  font-size: 1.2em;
+}
+" lang="en-US" data-marpit-pagination="54" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--style:section {
+  width: 1280px;
+  height: 720px;
+  font-size: 28px;
+}
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+section .admonition {
+  border-left: 4px solid #999;
+  padding: 0.75em 1em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 0.80em;
+}
+section .admonition.tip {
+  border-color: #2ecc71;
+  background: #f0fff0;    
+}
+section .admonition.warning {
+  border-color: #e67e22;
+  background: #fffaf0;
+}
+section .admonition.info {
+  border-color: #3498db;
+  background: #f0f8ff;
+}
+section.small {
+  font-size: 1.4em;
+}  
+section.smaller {
+  font-size: 1.2em;
+}
+;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
+<h3 id="%E2%9D%8C-quelques-anti-patterns-dint%C3%A9gration-%C3%A0-%C3%A9viter"><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/274c.svg" data-marp-twemoji=""/> Quelques anti-patterns d'intégration à éviter</h3>
+<h4 id="%F0%9F%A7%8D%E2%80%8D%E2%99%82%EF%B8%8F-interventions-humaines-non-ma%C3%AEtris%C3%A9es"><img class="emoji" draggable="false" alt="🧍‍♂️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9cd-200d-2642-fe0f.svg" data-marp-twemoji=""/> Interventions humaines non maîtrisées</h4>
+<ul>
+<li>Déploiements manuels, procédures non automatisées</li>
+<li>Dépendance à des <strong>workflows informels ou oraux</strong></li>
+<li>Risques d’erreurs, de non-reproductibilité et de ralentissement</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
@@ -5324,19 +5326,13 @@ section.smaller {
   font-size: 1.2em;
 }
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
-<h3 id="%E2%9D%8C-quelques-anti-patterns-dint%C3%A9gration-%C3%A0-%C3%A9viter"><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/274c.svg" data-marp-twemoji=""/> Quelques anti-patterns d'intégration à éviter</h3>
-<h4 id="%F0%9F%A7%8D%E2%80%8D%E2%99%82%EF%B8%8F-interventions-humaines-non-ma%C3%AEtris%C3%A9es"><img class="emoji" draggable="false" alt="🧍‍♂️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9cd-200d-2642-fe0f.svg" data-marp-twemoji=""/> Interventions humaines non maîtrisées</h4>
-<ul>
-<li>Déploiements manuels, procédures non automatisées</li>
-<li>Dépendance à des <strong>workflows informels ou oraux</strong></li>
-<li>Risques d’erreurs, de non-reproductibilité et de ralentissement</li>
-</ul>
 <h4 id="%E2%9A%A0%EF%B8%8F-int%C3%A9gration-continue-d%C3%A9faillante"><img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" data-marp-twemoji=""/> Intégration continue défaillante</h4>
 <ul>
 <li><strong>Builds lancés à la main</strong>, sans trigger automatique</li>
-<li><strong>Tests trop longs</strong> (&gt; 10 mins) ou instables → développeurs les contournent</li>
+<li><strong>Tests trop longs</strong> (&gt; 10 mins) ou non-reproductibles</li>
 <li><strong>Perte de confiance</strong> dans les pipelines CI/CD</li>
 <li><strong>Temps de feedback trop élevé</strong> → ralentit la boucle de développement</li>
+<li><strong>Contrôles</strong> (qualimétrie, sécurité, performances...) <strong>contournés</strong> ou shuntés par les devs</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
@@ -5415,6 +5411,7 @@ section.smaller {
 <li>Trop de <strong>branches parallèles</strong> → complexité, conflits, dérives</li>
 <li><strong>Absence de tags</strong> -&gt; difficile de retrouver la version qui a été livrée</li>
 <li><strong>Branches actives longtemps sans rebase</strong> = dette technique</li>
+<li><strong>Absence de convention de nommage</strong>  des messages de commits et branches (voir le <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commit</a>)</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="small" data-style="section {
@@ -5558,16 +5555,16 @@ section.smaller {
   font-size: 1.2em;
 }
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:33%;" data-marpit-pagination-total="150" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-marpit-advanced-background="content" data-marpit-advanced-background-split="left">
-<h4 id="%E2%86%94%EF%B8%8F-imp%C3%A9dance-dev-prod"><img class="emoji" draggable="false" alt="↔️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2194.svg" data-marp-twemoji=""/> Impédance DEV-PROD</h4>
+<h4 id="%E2%86%94%EF%B8%8F-%C3%A9cart-ou-imp%C3%A9dance-dev-prod"><img class="emoji" draggable="false" alt="↔️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2194.svg" data-marp-twemoji=""/> Écart (ou impédance) DEV-PROD</h4>
 
 <ul>
-<li>Des <strong>binaries différents</strong> selon les environnements (ex : dev, staging, prod)</li>
+<li>Des <strong>binaries différents</strong> selon les environnements (ex : DEV, TEST, PROD)</li>
 <li><strong>Spécificité de l'environnement de DEV</strong>
 <ul>
 <li>(ex: développement sous Windows, déploiement sous Linux)</li>
 </ul>
 </li>
-<li>Génération locale, configuration manuelle, &quot;ça marche chez moi/ <strong>Works on my machine</strong>&quot;</li>
+<li>Génération locale, configuration manuelle, &quot;ça marche chez moi / <strong>Works on my machine</strong>&quot;</li>
 </ul>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="small" data-style="section {

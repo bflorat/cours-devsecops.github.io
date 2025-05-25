@@ -415,7 +415,7 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
 🚀 **Innovation et amélioration continue**
 - Ateliers
 
-🤝 **Partager les responsabilités**
+🤝 **Partager les responsabilités**, culture du **blameless**.
 
 🔄 **Casser les carcans**
 - Les devs exploitent (**You build it, you run it** » Amazon)
@@ -524,7 +524,7 @@ Ne jamais embarquer de **configuration plate-forme dépendante** dans les paquet
 **Principe :**  
 Automatiser le **déploiement**, le **rollback**, le **provisionnement**, etc.
 
-#### Object
+#### Objectifs
 
 - ✅ Gagner en **fiabilité** et en **rapidité**
 - ✅ Réduire les erreurs humaines
@@ -537,16 +537,21 @@ Automatiser le **déploiement**, le **rollback**, le **provisionnement**, etc.
 - Pas besoin d'automatiser **absolument tout** !
 - ✅ Autoriser quelques actions manuelles **quand le coût d'automatisation est supérieur au gain attendu**
 
+<div class="admonition tip">
+  Voir <a href='https://sre.google/workbook/eliminating-toil/'>cette section</a> de "The Site Reliability Workbook" de Google.
+</div>
+
+
 ---
 
-## 🔀 Organisation en branches recommandée
+## 🔀 La gestion des branches en TBD
 
 - Approche Trunk-Based Development (**TBD**) + **FF** (Feature Flags)
 - **Une seule branche** (ex : `main`)  
 - Branches temporaires pour les **Merge Requests (topics)**  uniquement (durée de vie de quelques heures à quelques jours)
-- Feature-Flags pour activer/désactiver facilement les nouvelles fonctionnalités.
+- Feature-Flags pour activer/désactiver facilement les nouvelles fonctionnalités
 - Objectif : simplifier l'intégration, **réduire les conflits** et écarts
-- Configurer le **Fast-Forward only** (impose les rebases) pour faciliter la lecture de l'historique. 
+- Configurer le **Fast-Forward only** (impose les rebases) pour faciliter la lecture de l'historique
 
 ---
 
@@ -580,40 +585,30 @@ Déploiement progressif d'une nouvelle version logicielle à une fraction restre
 ### 🌑 Dark Deployment
 
 **Définition :**  
-Déploiement d'une nouvelle version en production **sans l'exposer** aux utilisateurs finaux.
+Déploiement d'une nouvelle version ou de nouveaux modules en production **sans les exposer** aux utilisateurs finaux
 
 #### Objectifs
 
 - ✅ Tester l'infrastructure et les performances
-- ✅ Identifier les problèmes cachés avant activation
+- ✅ Identifier les problèmes d'intégration en avance de phase 
 - ✅ Préparer un basculement rapide (feature toggle)
-
----
-
-#### Fonctionnement
-
-1. Déploiement en "ombre" en parallèle de l'ancien système
-2. Surveillance du comportement en production
-3. Activation ultérieure via un switch contrôlé (ex: feature flag)
-
-#### Avantages
-
-- 📌 Réduit les risques avant l'exposition
-- 📌 Permet des tests réalistes en conditions réelles
-- 📌 Améliore la qualité des mises en production
 
 ---
 
 ### 🔵🟢 Blue-Green Deployment
 
 **Définition :**  
-Technique de déploiement où **deux environnements identiques** (Blue et Green) sont utilisés pour minimiser les interruptions.
+Technique de déploiement où **deux environnements identiques** (Blue et Green) sont utilisés pour minimiser les interruptions
 
 #### Fonctionnement
 
 1. **Blue** : environnement en production actuel
 2. **Green** : nouvelle version déployée en parallèle
 3. Test sur Green → bascule du trafic → mise à jour terminée !
+
+<div class="admonition tip">
+  Le déploiement suivant sera donc en Green -> Blue
+</div>
 
 ---
 
@@ -626,8 +621,7 @@ Technique de déploiement où **deux environnements identiques** (Blue et Green)
 #### Avantages
 
 - 📌 Bascule instantanée
-- 📌 Rollback facile et rapide
-- 📌 Amélioration de la fiabilité et de l'expérience utilisateur
+- 📌 Rollback facile et rapide (hors données)
 
 <div class="admonition warning">
   ⚠️ Challenges au niveau des évolutions des modèles de données et de leur compatibilité...
@@ -679,6 +673,7 @@ Approche où **Git est la source unique de vérité** pour décrire l'état dés
 
 - Les configurations (infra, apps) sont **stockées dans Git**
 - Les modifications sont faites par **pull | merge requests** (PR/MR)
+- Les personnes sont identifiées via un **compte dédié**, pas un compte de service
 
 ---
 
@@ -693,7 +688,7 @@ Approche où **Git est la source unique de vérité** pour décrire l'état dés
 
 ## 🔧 Convention over Configuration (ou 'on rails')
 
-<!-- _class: small -->
+<!-- _class: smaller -->
 
 **Principe :**  
 Privilégier des **standards explicites** et les valeurs par défaut plutôt que laisser de nombreuses options manuelles.
@@ -706,8 +701,8 @@ Exemples :
 
 - ✅ Simplifier les décisions techniques
 - ✅ Gagner en **productivité** et en **prévisibilité**
+- ✅ Accélère le **onboarding**
 - ✅ Réduire les erreurs et les écarts de pratique
-
 
 ---
 
@@ -719,12 +714,15 @@ Exemples :
 - Dépendance à des **workflows informels ou oraux**  
 - Risques d’erreurs, de non-reproductibilité et de ralentissement
 
+---
+
 #### ⚠️ Intégration continue défaillante
 
 - **Builds lancés à la main**, sans trigger automatique  
-- **Tests trop longs** (> 10 mins) ou instables → développeurs les contournent  
+- **Tests trop longs** (> 10 mins) ou non-reproductibles
 - **Perte de confiance** dans les pipelines CI/CD  
 - **Temps de feedback trop élevé** → ralentit la boucle de développement
+- **Contrôles** (qualimétrie, sécurité, performances...) **contournés** ou shuntés par les devs 
 
 ---
 
@@ -733,19 +731,20 @@ Exemples :
 - Trop de **branches parallèles** → complexité, conflits, dérives  
 - **Absence de tags** -> difficile de retrouver la version qui a été livrée
 - **Branches actives longtemps sans rebase** = dette technique
+- **Absence de convention de nommage**  des messages de commits et branches (voir le [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/))
 
 ---
 
-#### ↔️ Impédance DEV-PROD
+#### ↔️ Écart (ou impédance) DEV-PROD
 
 <!-- _class: small -->
 
 ![bg left:33% fit](images/works-on-my-machine.png)
 
-- Des **binaries différents** selon les environnements (ex : dev, staging, prod)  
+- Des **binaries différents** selon les environnements (ex : DEV, TEST, PROD)  
 - **Spécificité de l'environnement de DEV** 
   - (ex: développement sous Windows, déploiement sous Linux)
-- Génération locale, configuration manuelle, "ça marche chez moi/ **Works on my machine**"  
+- Génération locale, configuration manuelle, "ça marche chez moi / **Works on my machine**"  
 
 
 ---
