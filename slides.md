@@ -784,13 +784,12 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 > Chaque composant n’a que les droits nécessaires à son fonctionnement. Isolation stricte des rôles.
 
 ---
-<!-- _class: small -->
 
 #### ✅ 7. Sensibilisation à la sécurité dans les équipes  
 > Formation continue, bonnes pratiques, revues de code avec une vision sécurité.
 
-#### ✅ 8. Conformité automatisée  
-> Intégration de contrôles de conformité (RGPD, ISO, etc.) dans les pipelines et les audits.
+#### ✅ 8. Conformité outillée  
+> Outil de suivi de conformité (RGPD, ISO, etc.) comme les SIEM (Security information and event management). Ex: Splunk.
 
 ---
 
@@ -927,7 +926,7 @@ Voir le [Landscape CNCF ](https://landscape.cncf.io/) (Cloud Native Computing Fo
 ---
 ### 🖼️ Les images de conteneurs
 
-> Une **image de conteneur** est un **snapshot exécutable** contenant tout le nécessaire pour lancer une application.
+> Une **image de conteneur** est une archive contenant tout le nécessaire pour lancer une application (les binaires mais aussi ses libraries et les librairies système dont il a besoin).
 
 #### ✅ Norme de référence : **OCI (Open Container Initiative)**
 
@@ -974,8 +973,8 @@ CMD ["npm", "start"]
 
 ### 🧱 Exemples d’outils de construction et execution des conteneurs
 
-- **Docker** : création et exécution de conteneurs
-- **Podman** : alternative sans daemon
+- **Docker** : création et exécution de conteneurs (via un démon RESTful)
+- **Podman** : alternative sans démon
 - **Containerd / CRI-O** : autres moteurs d’exécution de haut niveau (gèrent le cycle de vie, le pull, l’exécution des conteneurs)
 - **Kaniko**/**Buildah** : construction d’images OCI en userspace (hors containeur)
 - **runc** (par défaut, écrit en Go) / **crun** (écrit en C) / **youki** (en Rust) : moteurs d’exécution bas niveau
