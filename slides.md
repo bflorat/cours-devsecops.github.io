@@ -2,7 +2,6 @@
 marp: true
 paginate: true
 transition: push
-footer: "© 2025 Bertrand Florat – CC BY-SA 4.0"
 style: |
   section {
     width: 1280px;
@@ -34,10 +33,10 @@ style: |
     background: #f0f8ff;
   }
   section.small {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }  
   section.smaller {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 ---
 
@@ -71,7 +70,7 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 ---
 
-# 🧭 Séance 1 – Panorama des architectures modernes & fondations du DevSecOps (1h20)
+# 🧭 Séance 1 – Fondations du DevSecOps (1h20)
 
 * 1 - Rappel sur les typologies d'architectures modernes
 * 2 - Rappel sur les ENF
@@ -82,7 +81,7 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 ---
 
-# 1.1 Rappel sur les typologies d'architectures modernes
+# 1.1 Rappel sur les typologies d'architecture modernes
 
 ---
 
@@ -92,10 +91,10 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 ![bg left:40% 100%](./images/typologie-monolithe-03.svg)
 
 * Applications Web (Server Side Rendering)
-* Unité de déploiement unique: Toute l'application est déployée comme un seul bloc
+* Unité de déploiement unique: Toute l'application est déployée en un bloc
 * Base de code commune: Tous les modules partagent le même codebase
 * Couplage fort: Les composants sont étroitement liés et interdépendants
-* En général, découpage en couches au sein d'un seul tiers
+* En général, découpage en couches (au sein d'un seul tiers)
 
 ---
 
@@ -103,14 +102,14 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 <!-- _class: small -->
 
-* ✅ **Web**: très simple à déployer
+* ✅ **Web**: simple à déployer
 * ✅ Architecture **simple**
 * ✅ **Technologies homogènes**: Utilisation généralement d'un seul langage/framework
-* 🌀 **Vendor Locking** selon les technologies retenues mais va dans le bon sens (ex: JEE)
-* 🌀 **Scalabilité** verticale ET horizontale possible mais globale et limitée pour les BDD
+* 🌀 **Vendor Locking** selon les technologies retenues mais acceptable (ex: JEE)
+* 🌀 **Scalabilité** verticale ET horizontale possible mais globale
 * ⚠️ **Difficile à maintenir** (couplage fort, code complexe)
-* ⚠️ Collaboration difficile (conflits de merge...)
-* ⚠️ Difficile à tester
+* ⚠️ **Collaboration difficile** (conflits de merge...)
+* ⚠️ **Difficile à tester**
 * ⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
 * ⚠️ **Lourd à démarrer / déployer**
 ---
@@ -129,12 +128,12 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 ## Le n-tiers : avantages / inconvénients 
 
 * ✅ **Architecture simple**
-* ✅ **Scalabilité:** Verticale ET horizontale (mais limitée sur les BDD). 
+* ✅ **Scalabilité:** Verticale ET horizontale (mais limitée sur les BDD)
 * ✅ **Scalabilité individuelle** de chaque tiers (ex: 2 serveurs de présentation, 3 serveur de service)
 * ✅ **Découplage** présentation / services
 * ✅ **RH** : Possible d'avoir deux équipes : une frontend et une backend
 * 🌀 **Maintenance** quelque fois difficile à maintenir (couplage fort, code complexe dans chaque tiers)
-* 🌀 **Vendor Locking** : Selon les technologies retenues mais va dans le bon sens (ex: JEE)
+* 🌀 **Vendor Locking** : Selon les technologies retenues mais acceptable (ex: JEE)
 * 🌀 **Testabilité** : Plus simple à tester (ex: bouchonnage du tiers services)
 * 🌀 **Déploiement**: Peut être lourd à démarrer / déployer. Démarrage à faire dans l'ordre.
 * ⚠️ **Stack technologique** : presque impossible à migrer (il faut tout réécrire)
@@ -229,15 +228,15 @@ serverless :
 <div class="admonition tip">
   💡 <strong>Note :</strong> Les architectures n-tiers, microservices et serverless représentent <b>l'état de l'art</b> actuel.
 
-  * L'architecture microservice est présente de nombreux avantages mais [nécessite](https://martinfowler.com/bliki/MicroservicePrerequisites.html) une force de frappe technique considérable.
+  * L'architecture microservice est présente de nombreux avantages mais [nécessite](https://martinfowler.com/bliki/MicroservicePrerequisites.html) une force de frappe technique considérable
   
-  * Utiliser une architecture n-iers classique en couches/hexagonale +  du servless au besoin pour les projets simples ou les organisations plus modestes. 
+  * Utiliser une architecture n-iers classique en couches/hexagonale +  du servless au besoin pour les projets simples ou les organisations plus modestes
 
   * Le serverless est <strong>peu adapté</strong> aux environnements <strong>souverains</strong> (administrations) ou <strong>sensibles</strong>
 
   * On le rencontre plus fréquemment dans les <strong>structures agiles</strong> (startups, PME) ou celles disposant de <strong>moins d’exigences techniques internes</strong>
 
-  * Le serverless et les microservices sont souvent <strong>utilisés de façon complémentaire</strong>. Ils ne s'opposent pas.
+  * Ces architectures sont souvent <strong>utilisés de façon complémentaire</strong>. Elles ne s'excluent pas mutuellement.
 
   * À titre personnel, je recommanderais pour les applications de gestion de taille moyenne à importante de **limiter le serverless aux fonctions périphériques** (envoi d’emails, traitement de fichiers, BI...)
 </div>
@@ -325,7 +324,7 @@ Plus de détail :
 ## Défis de la Collaboration Devs-Ops
 
 - **Silos Organisationnels** : Communication limitée entre équipes
-- **Processus Lents** : Déploiements longs et complexes (Time To Market = **TTM allongé**)
+- **Processus Lents** : Déploiements longs et complexes (Time To Market = **TTM** allongé)
 - **Résistance au Changement** : Culture d'entreprise parfois réticente à l'innovation
 - **Impact sur l'Innovation** : Difficulté à répondre rapidement aux besoins du marché
 
@@ -335,7 +334,7 @@ Plus de détail :
 
 ![bg left:40% 100%](./images/devops.png)
 
-Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiablement**.
+Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiablement**
 
 <div class="admonition tip">
   💡 Le DevOps est un <strong>ensemble de pratique agiles appliquées à l'intégration</strong> et non à la gestion de projet (comme Scrum) ou au code (comme XP)
@@ -347,7 +346,7 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
 
 - **DevOps** : Aligner les objectifs des Devs et des Ops.
 - **Avantages** :
-  - **Amélioration de la Communication** : Réduction des silos.
+  - **Amélioration de la Communication** : Réduction des silos
   - **Déploiements Plus Rapides et Sécurisés** : Automatisation avec CI/CD
   - **Culture de Collaboration** : Responsabilité partagée pour la qualité et la stabilité
 
@@ -385,21 +384,21 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
 
 <!-- _class: small -->
 
-📝 Plan : prioriser les besoins (fonctionnels et non fonctionnels)
+📝 **Plan** : prioriser les besoins (fonctionnels et non fonctionnels)
 
-💻 Code : Écrire le code source et les tests unitaires — souvent collaboratif (Git, MR…)
+💻 **Code** : Écrire le code source et les tests unitaires — souvent collaboratif (Git, MR…)
 
-🧱 Build : Compiler, empaqueter l’application et générer des artefacts (binaries, containers…)
+🧱 **Build** : Compiler, empaqueter l’application et générer des artefacts (binaries, containers…)
 
-✅ Test : Exécuter des tests automatisés (unitaires, d’intégration, de sécurité…)
+✅ **Test** : Exécuter des tests automatisés (unitaires, d’intégration, de sécurité…)
 
-🚀 Release : Préparer la MEP, valider le déploiement dans des environnements de test
+🚀 **Release** : Préparer la MEP, valider le déploiement dans des environnements de test
 
-📦 Deploy : Déployer automatiquement dans l’environnement de production (CD, canary…)
+📦 **Deploy** : Déployer automatiquement dans l’environnement de production (CD, canary…)
 
-⚙️ Operate : Bon fonctionnement du service (patchs, ajouter ressources, modifier configuration) 
+⚙️ **Operate** : Bon fonctionnement du service (patchs, ajouter ressources, modifier configuration) 
 
-📊 Monitor : Observer performances, superviser, collecter métriques, détecter anomalies
+📊 **Monitor** : Observer performances, superviser, collecter métriques, détecter anomalies
 
 ---
 
