@@ -52,7 +52,7 @@ color: white
 
 Ce document est sous licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) (CC BY-SA 4.0)
 
-Version : ${COMMIT_HASH} du ${BUILD_DATE}
+Révision : `${COMMIT_HASH}` du ${BUILD_DATE} - [Version PDF](slidesDevSecOps.pdf)
 
 ---
 <!--
@@ -229,7 +229,7 @@ serverless :
 
   * L'architecture microservice est présente de nombreux avantages mais [nécessite](https://martinfowler.com/bliki/MicroservicePrerequisites.html) une force de frappe technique considérable
   
-  * Utiliser une architecture n-iers classique en couches/hexagonale +  du servless au besoin pour les projets simples ou les organisations plus modestes
+  * Utiliser une architecture n-iers classique en couches/hexagonale + présentation en SPA (React.js...) pour les projets simples ou les organisations plus modestes
 
   * Le serverless est <strong>peu adapté</strong> aux environnements <strong>souverains</strong> (administrations) ou <strong>sensibles</strong>
 
@@ -1732,9 +1732,6 @@ Comment intégrer une analyse SCA d'un logiciel JavaScript dans un pipeline ?
 - **Cloud** : AWS, OVH Public Cloud, Azure, GCP, ...
 - **Surveillance & Logs** : Prometheus, Grafana, ELK Stack
 
-Pour les SysOps :
-- **Virtualisation**: Proxmox VE, VMWare ESXi, OpenStack
-
 ---
 
 🚀 Prêt à démarrer ?
@@ -1742,7 +1739,6 @@ Pour les SysOps :
 Guide des technologies à connaître pour devenir DevOps :
 
 👉 [https://roadmap.sh/devops](https://roadmap.sh/devops)
-
 
 ---
 
@@ -1787,6 +1783,7 @@ Guide des technologies à connaître pour devenir DevOps :
 
 En tant que futur encadrant, vous serez également responsable :
 
+- De la **maîtrise des coûts**
 - De la **qualité de l'observabilité** et de sa **conformité réglementaire**  
 - Des **arbitrages** entre **sécurité**, **performance** et **vie privée**  
 - De l’**impact environnemental** des pratiques techniques (**écoconception**)
@@ -1795,19 +1792,41 @@ En tant que futur encadrant, vous serez également responsable :
 
 ---
 
-### 🔐 DevSecOps – Sécurité intégrée
-
-- Intégration de la **cybersécurité dans les pipelines** CI/CD
-- Analyse statique (SAST), dépendances (SCA), signature des artefacts
-- Principe : **"Security as Code"**
-
----
-
 ### 💰 FinOps – Optimisation des coûts cloud
 
 - Suivi et **pilotage des dépenses cloud** par les équipes techniques
 - Budgétisation, alertes, accountability, optimisation multi-cloud
 - Collaboration Dev + Finances + Ops
+
+---
+
+## 💸 Intérêt économique des tests et de la CI/CD
+
+### 📈 Le coût d’un bug augmente **exponentiellement** avec le temps
+
+- Plus un défaut est détecté **tard**, plus il coûte cher à corriger :
+  - 25€ en phase de dev
+  - 2500€ ou + en production
+- Les boucles longues favorisent l’accumulation de dette technique invisible
+
+---
+
+### 🔁 Règle d’or : la **rétroaction rapide**
+
+🕐 **"10 minutes max"** : temps idéal pour un retour complet dans un pipeline
+
+🔧 Objectif :
+- Identifier les erreurs **immédiatement après le commit**
+- Corriger à chaud → développeur encore “dans le flow”
+- Réduire les context switches, les bugs en prod, et la frustration
+
+🚀 Une CI/CD bien conçue = investissement qui **diminue les coûts cachés**
+
+---
+
+💰 Coût d'un bug avec la phase du projet
+
+![width:700px](./images/couts.png)
 
 ---
 ### 🧭 Éthique de l’observabilité
@@ -1899,12 +1918,6 @@ Aujourd’hui, un encadrant technique ne peut plus ignorer la **sécurité**
 
 Elle se construit dans la **culture d’équipe** et les **choix technologiques**  
 
-Les menaces évoluent, les erreurs humaines sont fréquentes  
-
-Il faut un leadership technique conscient et engagé
-
-🧭 **Objectif** : poser les bases d’un rôle d'encadrant responsable, garant de la sécurité par défaut
-
 ---
 
 ## 🧭 Gouvernance de la sécurité dans l’équipe
@@ -1959,37 +1972,6 @@ Il faut un leadership technique conscient et engagé
 -  Rendre la sécurité **visible** : KPIs, alertes, dashboards  
 -  Défendre les **chantiers sécurité/dette technique** face aux priorités business  
 -  **Valoriser les efforts invisibles** autour de la sécurité
-
----
-
-## 💸 Intérêt économique des tests et de la CI/CD
-
-### 📈 Le coût d’un bug augmente **exponentiellement** avec le temps
-
-- Plus un défaut est détecté **tard**, plus il coûte cher à corriger :
-  - 25€ en phase de dev
-  - 2500€ ou + en production
-- Les boucles longues favorisent l’accumulation de dette technique invisible
-
----
-
-### 🔁 Règle d’or : la **rétroaction rapide**
-
-🕐 **"10 minutes max"** : temps idéal pour un retour complet dans un pipeline
-
-🔧 Objectif :
-- Identifier les erreurs **immédiatement après le commit**
-- Corriger à chaud → développeur encore “dans le flow”
-- Réduire les context switches, les bugs en prod, et la frustration
-
-🚀 Une CI/CD bien conçue = investissement qui **diminue les coûts cachés**
-
----
-
-💰 Coût d'un bug avec la phase du projet
-
-![width:700px](./images/couts.png)
-
 
 ---
 
