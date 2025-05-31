@@ -50,6 +50,8 @@ color: white
 
 ## Université de Nantes, MIAGE, M2
 
+© 2025 Bertrand Florat
+
 Ce document est sous licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) (CC BY-SA 4.0)
 
 Révision : `${COMMIT_HASH}` du ${BUILD_DATE} - [Version PDF](slidesDevSecOps.pdf)
