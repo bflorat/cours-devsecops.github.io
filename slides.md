@@ -536,7 +536,7 @@ Automatiser le **déploiement**, le **rollback**, le **provisionnement**, etc.
 
 ---
 
-## 🔀 La gestion des branches en TBD
+## 🔀 La gestion des branches en Trunk-Based Development (TBD)
 
 - Approche Trunk-Based Development (**TBD**) + **FF** (Feature Flags)
 - **Une seule branche** (ex : `main`)  
@@ -890,7 +890,8 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 * 2 - Rappel sur les conteneurs
 * 3 - Kubernetes : le système nerveux du cloud
 * 4 - L'Infrastructure as Code (IaC)
-* 5 - La CI / CD
+* 5 - Notions de déploiement sécurisé
+* 6 - La CI / CD
 
 ---
 
@@ -1006,7 +1007,7 @@ CMD ["npm", "start"]
 
 ---
 
-#### 📊 Chiffres clés (ordre de grandeur)
+#### 📊 Chiffres clés
 
 - **≈120k stars** sur GitHub (projet Kubernetes)
 - **≈8 600 contributeurs actifs** (période récente, Linux Foundation Insights)
@@ -1093,7 +1094,7 @@ spec:
 ![width:700px](./images/k9s.png)
 
 <div class="admonition info">
-  ℹ️ Outil presque indispensable et permettant d'accélerer grandement la gestion d'un cluster K8S
+  ℹ️ Outil presque indispensable et permettant d’accélérer grandement la gestion d'un cluster K8S
 </div>
 ---
 
@@ -1129,7 +1130,7 @@ spec:
 - "Je veux **2 serveurs** EC2 avec 8 Go de RAM"
 - "Je veux un **load balancer** devant mes pods Kubernetes"
 - "Je veux une **base PostgreSQL** avec sauvegarde quotidienne"
-- "Je veux **4 instances** à tout moment de mon serveur Web et situés sur des noeuds différents
+- "Je veux **4 instances** à tout moment de mon serveur Web et situées sur des noeuds différents"
 
 ---
 
@@ -1303,7 +1304,7 @@ patches:
 ```
 
 ---
-## 🔐 2.4 Notions de déploiement sécurisé
+## 🔐 2.5 Notions de déploiement sécurisé
 
 > Un déploiement sécurisé repose sur plusieurs **couches complémentaires** de protection
 
@@ -1367,7 +1368,7 @@ roleRef:
 
 ---
 
-### 🔄 2.5 La CI / CD
+### 🔄 2.6 La CI / CD
 
 > La CI/CD automatise la **construction, les tests et le déploiement** des applications,  
 > afin de **livrer plus vite**, **plus souvent**, et **avec plus de fiabilité**
