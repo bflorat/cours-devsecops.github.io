@@ -50,7 +50,7 @@ color: white
 
 ## Université de Nantes, MIAGE, M2
 
-© 2025 Bertrand Florat
+© 2025-2026 Bertrand Florat
 
 Ce document est sous licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) (CC BY-SA 4.0)
 
@@ -229,15 +229,15 @@ serverless :
 <div class="admonition tip">
   💡 <strong>Note :</strong> Les architectures n-tiers, microservices et serverless représentent <b>l'état de l'art</b> actuel.
 
-  * L'architecture microservice est présente de nombreux avantages mais [nécessite](https://martinfowler.com/bliki/MicroservicePrerequisites.html) une force de frappe technique considérable
+  * L'architecture microservice présente de nombreux avantages mais [nécessite](https://martinfowler.com/bliki/MicroservicePrerequisites.html) une force de frappe technique considérable
   
-  * Utiliser une architecture n-iers classique en couches/hexagonale + présentation en SPA (React.js...) pour les projets simples ou les organisations plus modestes
+  * Utiliser une architecture n-tiers classique en couches/hexagonale + présentation en SPA (React.js...) pour les projets simples ou les organisations plus modestes
 
   * Le serverless est <strong>peu adapté</strong> aux environnements <strong>souverains</strong> (administrations) ou <strong>sensibles</strong>
 
   * On le rencontre plus fréquemment dans les <strong>structures agiles</strong> (startups, PME) ou celles disposant de <strong>moins d’exigences techniques internes</strong>
 
-  * Ces architectures sont souvent <strong>utilisés de façon complémentaire</strong>. Elles ne s'excluent pas mutuellement.
+  * Ces architectures sont souvent <strong>utilisées de façon complémentaire</strong>. Elles ne s'excluent pas mutuellement.
 
   * À titre personnel, je recommanderais pour les applications de gestion de taille moyenne à importante de **limiter le serverless aux fonctions périphériques** (envoi d’emails, traitement de fichiers, BI...)
 </div>
@@ -281,7 +281,6 @@ Plus de détail :
   💡 <strong>Note :</strong> Voir au besoin <a href='https://public.florat.net/cours_miage/support-CoursArchiSolution.pdf'>le cours de M1</a> sur les Exigences Non Fonctionnelles (ENF).
 </div>
 
-
 ---
 
 ## 1.3 Contexte des Organisations Traditionnelles
@@ -305,7 +304,6 @@ Plus de détail :
   - **Cycle de Développement Court** : Utiliser des méthodologies agiles
 - **Défis** :
   - Risque d'introduire des bugs ou des instabilités
-  
 
 ---
 
@@ -318,7 +316,6 @@ Plus de détail :
   - **Maintenance Préventive** : Effectuer des mises à jour pour éviter les pannes
 - **Défis** :
   - Gérer les changements fréquents tout en maintenant la stabilité
-  
 
 ---
 
@@ -350,7 +347,6 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
   - **Amélioration de la Communication** : Réduction des silos
   - **Déploiements Plus Rapides et Sécurisés** : Automatisation avec CI/CD
   - **Culture de Collaboration** : Responsabilité partagée pour la qualité et la stabilité
-
 
 ---
 
@@ -448,7 +444,6 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
 - **Scalabilité**, tolérance aux pannes, portabilité
 - **Infrastructure dynamique** et éphémère
 
-
 DevOps **est un prérequis naturel** au cloud-native : impossible d’exploiter des architectures distribuées modernes **sans automatisation et collaboration**
 
 Cloud-native **amplifie les bénéfices de DevOps** : scalabilité automatique, testabilité, déploiement continu, observabilité native
@@ -469,7 +464,6 @@ Cette métaphore illustre le **changement de culture** entre l’infrastructure 
 | Configuration manuelle            | Créés par script / IaC                      |
 | Chers à maintenir                 | Jetables, scalables, automatisés            |
 | Tendance "on-premise"             | Tendance cloud / conteneurs / DevOps        |
-
 
 <div class="admonition info">
   ℹ️ L’approche <strong>"Cattle"</strong> favorise la <strong>scalabilité, la résilience et l’automatisation</strong>, au cœur des pratiques <strong>cloud-native et DevOps</strong>.
@@ -492,9 +486,7 @@ Cette métaphore illustre le **changement de culture** entre l’infrastructure 
 - 5 : L’équipe de Dev rédige un **document d’installation manuelle en Word** et l’envoie aux Ops par mail lorsque la version du produit est publiée
 ---
 
-
 ## 🔒 1.5 Bonnes pratiques DevOps (architecture et livraison)
-
 
 ---
 
@@ -541,7 +533,6 @@ Automatiser le **déploiement**, le **rollback**, le **provisionnement**, etc.
 <div class="admonition tip">
   Voir <a href='https://sre.google/workbook/eliminating-toil/'>cette section</a> de "The Site Reliability Workbook" de Google.
 </div>
-
 
 ---
 
@@ -628,7 +619,6 @@ Technique de déploiement où **deux environnements identiques** (Blue et Green)
   ⚠️ Challenges au niveau des évolutions des modèles de données et de leur compatibilité...
 </div>
 
-
 ---
 
 ### 🕶️ Shadow Traffic (ou Double Commande)
@@ -638,7 +628,6 @@ Technique de déploiement où **deux environnements identiques** (Blue et Green)
 Technique où **le trafic utilisateur est dupliqué** vers une nouvelle version sans impacter la réponse envoyée.
 
 ![bg right width:500px](images/double-commande.svg)
-
 
 #### Objectifs
 
@@ -684,6 +673,16 @@ Approche où **Git est la source unique de vérité** pour décrire l'état dés
 - ✅ Rollbacks facilités
 - ✅ Déploiements reproductibles et fiables
 - ✅ Séparation claire entre développement et opérations
+
+---
+
+### 📊 GitOps : tendance (2024)
+
+- **77%** des organisations déclarent adopter les principes GitOps (CNCF Annual Survey 2024)  
+  Source : https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/
+
+- **Argo CD** est majoritairement adopté pour GitOps sur Kubernetes (CNCF / Argo CD End User Survey 2025)  
+  Source : https://www.cncf.io/announcements/2025/07/24/cncf-end-user-survey-finds-argo-cd-as-majority-adopted-gitops-solution-for-kubernetes/
 
 ---
 
@@ -747,7 +746,6 @@ Exemples :
   - (ex: développement sous Windows, déploiement sous Linux)
 - Génération locale, configuration manuelle, "ça marche chez moi / **Works on my machine**"  
 
-
 ---
 
 ## 1.6 🔒 Le DevSecOps
@@ -771,9 +769,7 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 #### ✅ 3. Automatisation des contrôles de sécurité  
 > Scans de vulnérabilités, tests statiques, politiques de sécurité automatisées dans les pipelines CI/CD.
 
-
 ---
-
 
 #### ✅ 4. "Shift Left"  
 > Détecter les failles **le plus tôt possible**, dès l’écriture du code, pour éviter des corrections tardives coûteuses.
@@ -790,7 +786,7 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 > Formation continue, bonnes pratiques, revues de code avec une vision sécurité.
 
 #### ✅ 8. Conformité outillée  
-> Outil de suivi de conformité (RGPD, ISO, etc.) comme les SIEM (Security information and event management). Ex: Splunk.
+> Outils de suivi de conformité (RGPD, ISO, etc.) et corrélation de logs (SIEM) : ex. Splunk.
 
 ---
 
@@ -809,11 +805,11 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 ### ❓ Lequel choisir ?
 
 - ✅ **DevSecOps est une évolution naturelle du DevOps**  
-- 🔐 Choisissez **DevSecOps dès que des données sensibles, un contexte réglementaire ou une exposition web** sont en jeu.
+- 🔐 Choisissez **DevSecOps** dès que des données sensibles, un contexte réglementaire ou une exposition web sont en jeu.
 - 🛠️ Pour des projets internes simples, DevOps peut suffire (au départ)... mais sécuriser dès le début reste toujours préférable.
 
 <div class="admonition info">
-  ℹ️ Aujourd'hui, dans un contexte de plus en plus dangereux (attaques, DDOS, rançongiciels, hameçonnage...),  l'<strong>approche DevSecOps est à privilégier</strong> dans la plupart des cas.
+  ℹ️ Aujourd'hui, dans un contexte de plus en plus dangereux (attaques, DDOS, rançongiciels, hameçonnage...), l'<strong>approche DevSecOps est à privilégier</strong> dans la plupart des cas.
 </div>
 
 ---
@@ -827,17 +823,30 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 - **Surface d’attaque minimale** : réduction des points d’entrée exposés
 - **Défense en profondeur** : plusieurs couches de sécurité superposées
 - **Comportement sûr par défaut** : tout ce qui n’est pas explicitement autorisé est refusé
-- **Validation stricte des entrées** : toutes donnée externe est considérée comme non fiables
+- **Validation stricte des entrées** : toute donnée externe est considérée comme non fiable
 - **Auditabilité** : les actions critiques sont traçables et exploitables en cas d’incident
 
+---
+
+## 🔥 Les pires CVE des cinq dernières années (2020-2025)
+
+| **CVE** | **Produit/Système affecté** | **Impact / gravité** | **Pourquoi c’est marquant** |
+|---------|-----------------------------|----------------------|-----------------------------|
+| **CVE-2021-44228 — Log4Shell** | Apache Log4j | **CVSS 10.0 – RCE** | Exécution de code à distance via JNDI, exploité à grande échelle ; considéré comme l’une des vulnérabilités les plus critiques de la décennie. |
+| **CVE-2022-30190 — Follina** | Microsoft MSDT | **Critique – RCE** | Exploit facile via document Office, très utilisé en phishing/attaques post-compromission. |
+| **CVE-2022-22965 — Spring4Shell** | Spring Framework | **Critique – RCE** | Vulnérabilité dans une librairie Java très répandue, exploitée en environnement Java Cloud.  |
+| **CVE-2022-1388 — F5 BIG-IP iControl** | F5 BIG-IP | **Critique – RCE** | Failles dans les consoles d’administration réseau exposées en entreprise.  |
+| **CVE-2022-26134 — Confluence RCE** | Atlassian Confluence | **Critique – RCE** | Exploité massivement dans des attaques opportunistes sur serveurs Confluence. |
+| **CVE-2025-55182 — React2Shell** | React / Next.js | **CVSS 10.0 – RCE** | Nouvelle vulnérabilité critique touchant le rendu serveur de composants React.  |
+| **CVE-2025-32756 / CVE-2025-20333 / …** | Divers serveurs & équipements | **Critique – multiples vecteurs** | En continuum 2025, de nombreuses vulnérabilités critiques (score ~9.8-10) ont touché Cisco, SAP, Apache, etc. |
 
 ---
+
 
 ### 🛡️ Défense en profondeur (Defense in Depth)
 
 > Principe fondamental de la sécurité : **multiplier les couches de protection**  
 > pour réduire le risque d’intrusion ou de compromission, même en cas de faille.
-
 
 <div class="admonition info">
   💡 Certaines normes et meilleures pratiques recommandent la <b>diversité technologique</b> (dans la mesure du raisonnable) pour éviter les monocultures technologiques
@@ -859,7 +868,6 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 
 ---
 
-
 ### 🚨 Etude de cas : rôle du DevSecOps dans le cadre d'une CVE majeure ?
 
 **[Log4shell (CVE-2021-44228)](https://nvd.nist.gov/vuln/detail/CVE-2021-44228)** :
@@ -876,7 +884,6 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 
 ---
 
-
 # 🛠️ Séance 2 – Écosystème technologique : IaC, CI/CD & sécurité (1h20)
 
 * 1 - L'outillage et l'infrastructure DevOps / Cloud Native...
@@ -889,8 +896,7 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 
 ## 💡 2.1 L'outillage et l'infrastructure DevOps / Cloud Native...
 
-
-Voir le [Landscape CNCF ](https://landscape.cncf.io/) (Cloud Native Computing Foundation)
+Voir le [Landscape CNCF](https://landscape.cncf.io/) (Cloud Native Computing Foundation)
 
 * Un écosystème foisonnant...
 * ... en évolution rapide et constante
@@ -912,14 +918,14 @@ Voir le [Landscape CNCF ](https://landscape.cncf.io/) (Cloud Native Computing Fo
 - Facile à versionner, tester, déployer
 
 ---
-### Containeurs et VMs
+### Conteneurs et VMs
 
 ![](./images/conteneurs.png)
 
 <div class="admonition info">
   ℹ️ Ne pas opposer VM et conteneurs :
 
-* VM : premier découpage pour grosses machines 
+* VM : premier découpage pour grosses machines 
 * Les conteneurs tournent très souvent dans des VMs...
 * Mais pas toujours (**bare metal**)
 </div>
@@ -943,7 +949,7 @@ Voir le [Landscape CNCF ](https://landscape.cncf.io/) (Cloud Native Computing Fo
 - Les couches sont **en cache** et **partagées** entre images
 - On peut **reconstruire partiellement** l’image si une couche change
 - Consolidées sous la forme d'une archive (`.tar.gz`) 
-- **Publiées (push) dans un registre d'image** (ex: Artifactory, GitLab Container Registry, GitHub Container Registry, ...)  pour pouvoir être récupérées (pull)
+- **Publiées (push) dans un registre d'image** (ex: Artifactory, GitLab Container Registry, GitHub Container Registry, ...) pour pouvoir être récupérées (pull)
 
 ---
 
@@ -1000,12 +1006,13 @@ CMD ["npm", "start"]
 
 ---
 
-#### 📊 Chiffres clés
+#### 📊 Chiffres clés (ordre de grandeur)
 
-- **2ᵉ projet open source** le plus actif (après Linux)
-- **1500+ contributeurs actifs**
-- **70k+ stars** sur GitHub
+- **≈120k stars** sur GitHub (projet Kubernetes)
+- **≈8 600 contributeurs actifs** (période récente, Linux Foundation Insights)
+- **91%** des organisations utilisent des **conteneurs en production** (CNCF Annual Survey 2024) 
 - **80% des grandes organisations dans le monde** utilisent K8S en 2025 (contre 63% en 2024) ([source CNCF](https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/?utm_source=chatgpt.com))
+
 
 ---
 
@@ -1571,7 +1578,7 @@ pipeline {
 
 - Liste exhaustive des composants d’une image ou d’un build
 - Permet de retrouver facilement les dépendances, leurs versions et leurs licences **en production** (alors que le SCA ne s'applique que lors du build)
-- Requis par certaines normes (ex : NIS2, ISO 27001, DORA, ...)
+- Requis par de plus en plus de normes/réglementations (ex : NIS2, ISO 27001, DORA, ...)
 
 ### 📜 Provenance
 
@@ -1804,11 +1811,10 @@ En tant que futur encadrant, vous serez également responsable :
 
 ## 💸 Intérêt économique des tests et de la CI/CD
 
-### 📈 Le coût d’un bug augmente **exponentiellement** avec le temps
+### 📈 Le coût d’un bug augmente fortement avec le temps
 
-- Plus un défaut est détecté **tard**, plus il coûte cher à corriger :
-  - 25€ en phase de dev
-  - 2500€ ou + en production
+- Idée clé : plus un défaut est détecté tard, plus il est coûteux (contexte, coordination, correctifs, rollback, impact clients)
+- Les ratios exacts varient beaucoup (domaines, criticité, orga) ; on voit souvent des ordres de grandeur **x5 à x100** selon les phases
 - Les boucles longues favorisent l’accumulation de dette technique invisible
 
 ---
@@ -1864,7 +1870,7 @@ Le rôle de l’encadrant inclut également une **responsabilité environnementa
 
 ## 🎓 3.3 La Formation continue
 
-<div class="admonition <warning">
+<div class="admonition warning">
   ⚠️ Dans le monde du DevSecOps, les technologies évoluent encore plus vite que dans le domaine du code. Des formations régulières sont indispensables. Prévoir <i>a minima</i> des <b>MOOCs</b> (Udemy, Coursera, edX...) réguliers.
 </div>
 

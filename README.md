@@ -1,6 +1,6 @@
 # Cours DevSecOps Université de Nantes Miage M2
 
-### Copyright Bertrand Florat 2025
+### Copyright Bertrand Florat 2025-2026
 
 ### Licence
 Creative Commons Attribution-ShareAlike 4.0 International License.
