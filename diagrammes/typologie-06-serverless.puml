@@ -1,6 +1,7 @@
 @startuml typologie-serverless-06
 !include <C4/C4_Deployment>
 LAYOUT_TOP_DOWN()
+SHOW_PERSON_PORTRAIT()
 
 Person(user, "Utilisateur interne/externe")
 
