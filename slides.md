@@ -88,7 +88,7 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 <!-- _class: small -->
 
-### Le monolithe (années 1990 - ) 
+### Le monolithe (années 1990 - aujourd'hui) 
 ![bg left:40% 100%](./images/typologie-monolithe-03.svg)
 
 * Applications Web (Server Side Rendering)
@@ -107,7 +107,7 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 * ✅ Architecture **simple**
 * ✅ **Technologies homogènes**: Utilisation généralement d'un seul langage/framework
 * 🌀 **Vendor Locking** selon les technologies retenues mais acceptable (ex: JEE)
-* 🌀 **Scalabilité** verticale ET horizontale possible mais globale
+* 🌀 **Scalabilité** verticale ET horizontale possible mais indifférenciée par fonctionnalité
 * ⚠️ **Difficile à maintenir** (couplage fort, code complexe)
 * ⚠️ **Collaboration difficile** (conflits de merge...)
 * ⚠️ **Difficile à tester**
@@ -115,20 +115,20 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 * ⚠️ **Lourd à démarrer / déployer**
 ---
 
-## Le n-tiers (années 2000 - ) 
+## Le n-tiers (années 2000 - aujourd'hui) 
 
 <!-- _class: smaller -->
 
 ![bg left:40% 100%](./images/typologie-n-tiers-04.svg)
 
 * Applications Web (Server Side Rendering)
-* Proche du monolithe mais unité de déploiement par tiers (en général, un tiers présentation / un tiers service / un tiers BDD)
+* Proche du monolithe mais unité de déploiement par tiers (en général, un tiers présentation / un tiers service / un tiers persistence)
 ---
 <!-- _class: smaller -->
 
 ## Le n-tiers : avantages / inconvénients 
 
-* ✅ **Architecture simple**
+* ✅ **Architecture assez simple**
 * ✅ **Scalabilité:** Verticale ET horizontale (mais limitée sur les BDD)
 * ✅ **Scalabilité individuelle** de chaque tiers (ex: 2 serveurs de présentation, 3 serveur de service)
 * ✅ **Découplage** présentation / services
@@ -143,20 +143,21 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 ---
 
 
-## Le micro-services (années 2010 - ) 
+## Le micro-services (années 2010 - aujourd'hui) 
 
 <!-- _class: small -->
 
 ![bg left:40% 100%](./images/typologie-microservices-05.svg)
 
-* Découpage par services
-* Organisation autour des capacités métier
-* Produits plutôt que projets
-* Points de terminaison intelligents et tuyaux simples
-* Gouvernance et gestion des données décentralisées
-* Automatisation de l'infrastructure
-* Conception pour tolérer les défaillances
-* Conception évolutive
+* Découpage par **services**
+* Organisation autour des **capacités métier**
+* **Produits** plutôt que projets
+* **Points de terminaison intelligents** et **tuyaux simples**
+* Gouvernance et gestion des données **décentralisées**
+* **Automatisation** de l'infrastructure
+* Conception pour **tolérer les défaillances**
+* Conception **évolutive**
+* Écriture **polyglotte** (languages de programmation des services possiblement différents)
  
 ---
 <div class="admonition tip">
@@ -182,7 +183,7 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 * ✅ **Réutilisation des services** entre applications
 * ✅ **Déploiement indépendant** de chaque service : maj plus fréquentes et ciblées
 * ✅ **Scalabilité verticale et horizontale granulaire**
-* ✅ **DEV plus simple** : petits périmètres, plus faciles à comprendre et à tester
+* ✅ **DEV plus simple** : petits périmètres, plus faciles à comprendre et à tester, **très adapté à l'IA**
 * ✅ **Peu de vendor locking** : technologies Open Source et standard principalement
 * 🌀 **Code polyglotte** : **avantage RH** mais aussi un **risque sur la maintenabilité**
 * 🌀 **Surcoût en infrastructure** : orchestrateurs, API Gateway, monitoring, observabilité...
@@ -194,7 +195,7 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 ---
 
 
-## Le serverless (années 2015 - ) 
+## Le serverless (années 2015 - aujourd'hui) 
 
 <!-- _class: small -->
 ![bg left:40% 100%](./images/typologie-serverless-06.svg)
@@ -202,12 +203,12 @@ Pousser une Pull Request [ici](https://github.com/bflorat/cours-devsecops.github
 
 [Traits principaux](https://www.thoughtworks.com/insights/blog/traits-serverless-architecture/) (source: Thoughtworks) :
 serverless :
-* Faible Barrière à l'entrée
-* Sans hôtes (que l'on gère soit-même en tout cas)
-* Sans états (Stateless)
+* **Faible Barrière** à l'entrée
+* **Sans hôtes** (que l'on gère soit-même en tout cas)
+* **Sans états** (Stateless)
 * Élasticité
 * Distribué
-* Orienté événements (Event-Driven)
+* Orienté événements (**Event-Driven**)
 
 ---
 <!-- _class: smaller -->
@@ -219,7 +220,7 @@ serverless :
 * ✅ **Autonomie / parallélisation des équipes** : chaque équipe peut développer, tester et déployer son propre service 
 * 🌀 **Coût raisonné** en théorie (paiement à l'utilisation) prévoir **surveillance importante** pour éviter les surcoûts
 * 🌀 Développement en théorie rapide et simple, mais **débogage complexe** et **risque sur la cohérence globale**  
-* ⚠️ **Vendor-locking** très élevé (forte dépendance aux GAFAM)
+* ⚠️ **Vendor-locking** très élevé (forte dépendance aux plateformes Cloud)
 * ⚠️ **Surface d'attaque** plus large, surtout si on multiplie les fournisseurs  
 * ⚠️ **Architecture complexe** : code plus simple mais intégration plus complexe, nécessitant des mécanismes robustes et une gestion des erreurs (rejeux...).  
 * ⚠️ **Consistance des données plus difficile** : chaque service gère sa propre base → cohérence eventualisée
@@ -239,7 +240,7 @@ serverless :
 
   * Ces architectures sont souvent <strong>utilisées de façon complémentaire</strong>. Elles ne s'excluent pas mutuellement.
 
-  * À titre personnel, je recommanderais pour les applications de gestion de taille moyenne à importante de **limiter le serverless aux fonctions périphériques** (envoi d’emails, traitement de fichiers, BI...)
+  * En général, je recommande pour les applications **de taille moyenne à importante** de **limiter le serverless aux fonctions périphériques** (envoi d’emails, traitement de fichiers, BI...)
 </div>
 
 ---
@@ -251,7 +252,11 @@ Plus de détail :
 ---
 # 1.2 Rappel sur les ENF
 
-<!-- _class: small -->
+Une Exigence Non Fonctionnelle est une **exigence** portant sur une **aptitude d’un système informatique** (exemple: la confidentialité).
+
+Les exigences fonctionnelles précisent ce que doit faire le système (le quoi) : règles de gestion, IHM, traitements, ...) alors que les ENF précisent les **attributs de qualité du système**.
+
+---
 
 ### 🛠️ ENF d'exploitabilité
 
@@ -303,7 +308,7 @@ Plus de détail :
   - **Réactivité** : Adapter rapidement le produit en fonction des retours utilisateurs
   - **Cycle de Développement Court** : Utiliser des méthodologies agiles
 - **Défis** :
-  - Risque d'introduire des bugs ou des instabilités
+  - Ne pas introduire des bugs ou des instabilités (régressions, nouvelles fonctionnalités instables)
 
 ---
 
@@ -315,7 +320,7 @@ Plus de détail :
   - **Sécurité** : Protéger les systèmes contre les menaces
   - **Maintenance Préventive** : Effectuer des mises à jour pour éviter les pannes
 - **Défis** :
-  - Gérer les changements fréquents tout en maintenant la stabilité
+  - Gérer les changements fréquents tout en maintenant la stabilité et la sécurité.
 
 ---
 
@@ -379,21 +384,20 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
 
 ## Étapes clés du cycle DevOps
 
-<!-- _class: small -->
 
 📝 **Plan** : prioriser les besoins (fonctionnels et non fonctionnels)
 
 💻 **Code** : Écrire le code source et les tests unitaires — souvent collaboratif (Git, MR…)
 
-🧱 **Build** : Compiler, empaqueter l’application et générer des artefacts (binaries, containers…)
+🧱 **Build** : Compiler, empaqueter l’application et générer des artefacts
 
 ✅ **Test** : Exécuter des tests automatisés (unitaires, d’intégration, de sécurité…)
 
 🚀 **Release** : Préparer la MEP, valider le déploiement dans des environnements de test
 
-📦 **Deploy** : Déployer automatiquement dans l’environnement de production (CD, canary…)
+📦 **Deploy** : Déployer automatiquement (CD, canary…)
 
-⚙️ **Operate** : Bon fonctionnement du service (patchs, ajouter ressources, modifier configuration) 
+⚙️ **Operate** : Bon fonctionnement (patchs, ajouter ressources, modifier configuration) 
 
 📊 **Monitor** : Observer performances, superviser, collecter métriques, détecter anomalies
 
@@ -401,7 +405,7 @@ Livrer des logiciels **plus rapidement**, **plus fréquemment** et **plus fiable
 
 ## Comment mieux collaborer ?
 
-<!-- _class: smaller -->
+<!-- _class: small -->
 
 🌐 **Penser système, pas équipe isolée**
 - Communication multi-équipes via messagerie instantanée de préférence
@@ -452,10 +456,10 @@ Cloud-native **amplifie les bénéfices de DevOps** : scalabilité automatique, 
 
 ## 🐾 Pets vs 🐄 Cattle : deux visions de l'infrastructure
 
+<!-- _class: small -->
+
 Cette métaphore illustre le **changement de culture** entre l’infrastructure traditionnelle (manuelle) et l’infrastructure cloud-native (automatisée, jetable, scalable).
 
----
-<!-- _class: smaller -->
 
 | **Pets (animaux de compagnie)**   | **Cattle (bétail)**                        |
 |-----------------------------------|---------------------------------------------|
@@ -476,7 +480,6 @@ Cette métaphore illustre le **changement de culture** entre l’infrastructure 
 ![width:600px](./images/shift-pratiques.png)
 
 ---
-<!-- _class: small -->
 
 **🧠 Quiz !** Niveau DevOps de la pratique (de 0 à 5) :
 - 1 : Les ops fournissent aux devs un **dashboard Zabbix** mais seuls les Ops reçoivent les alertes par mail
@@ -531,7 +534,7 @@ Automatiser le **déploiement**, le **rollback**, le **provisionnement**, etc.
 - ✅ Autoriser quelques actions manuelles **quand le coût d'automatisation est supérieur au gain attendu**
 
 <div class="admonition tip">
-  Voir <a href='https://sre.google/workbook/eliminating-toil/'>cette section</a> de "The Site Reliability Workbook" de Google.
+  Voir <a href='https://sre.google/workbook/eliminating-toil/'>cette section</a> de "The Site Reliability Workbook" de Google: "It’s important to note that eliminating toil isn’t always the best solution".
 </div>
 
 ---
@@ -540,10 +543,10 @@ Automatiser le **déploiement**, le **rollback**, le **provisionnement**, etc.
 
 - Approche Trunk-Based Development (**TBD**) + **FF** (Feature Flags)
 - **Une seule branche** (ex : `main`)  
-- Branches temporaires pour les **Merge Requests (topics)**  uniquement (durée de vie de quelques heures à quelques jours)
+- Variante conseillée : **Short-Lived Feature Branches** : branches à vie courte (quelques h à quelques j) pour les **Merge Requests (topics)**  uniquement
 - Feature-Flags pour activer/désactiver facilement les nouvelles fonctionnalités
 - Objectif : simplifier l'intégration, **réduire les conflits** et écarts
-- Configurer le **Fast-Forward only** (impose les rebases) pour faciliter la lecture de l'historique
+- Configurer le **Fast-Forward only** (impose rebases) pour simplifier l'historique 
 
 ---
 
@@ -621,8 +624,7 @@ Technique de déploiement où **deux environnements identiques** (Blue et Green)
 
 ---
 
-### 🕶️ Shadow Traffic (ou Double Commande)
-<!-- _class: smaller -->
+### 🕶️ Shadow Traffic / Double Commande
 
 **Définition :**  
 Technique où **le trafic utilisateur est dupliqué** vers une nouvelle version sans impacter la réponse envoyée.
@@ -659,6 +661,8 @@ Approche où **Git est la source unique de vérité** pour décrire l'état dés
 
 > **Si ce n’est pas dans Git, ÇA N'EXISTE PAS !**
 
+**77%** des organisations déclarent adopter les principes GitOps (CNCF Annual Survey 2024) [[Source](https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/)]
+
 ### Fonctionnement
 
 - Les configurations (infra, apps) sont **stockées dans Git**
@@ -674,21 +678,12 @@ Approche où **Git est la source unique de vérité** pour décrire l'état dés
 - ✅ Déploiements reproductibles et fiables
 - ✅ Séparation claire entre développement et opérations
 
----
-
-### 📊 GitOps : tendance (2024)
-
-- **77%** des organisations déclarent adopter les principes GitOps (CNCF Annual Survey 2024)  
-  Source : https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/
-
-- **Argo CD** est majoritairement adopté pour GitOps sur Kubernetes (CNCF / Argo CD End User Survey 2025)  
-  Source : https://www.cncf.io/announcements/2025/07/24/cncf-end-user-survey-finds-argo-cd-as-majority-adopted-gitops-solution-for-kubernetes/
 
 ---
 
 ## 🔧 Convention over Configuration (ou 'on rails')
 
-<!-- _class: smaller -->
+<!-- _class: small -->
 
 **Principe :**  
 Privilégier des **standards explicites** et les valeurs par défaut plutôt que laisser de nombreuses options manuelles.
@@ -737,7 +732,6 @@ Exemples :
 
 #### ↔️ Écart (ou impédance) DEV-PROD
 
-<!-- _class: small -->
 
 ![bg left:33% fit](images/works-on-my-machine.png)
 
@@ -758,7 +752,6 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 
 ### 🔒 Fondamentaux du DevSecOps
 
-<!-- _class: small -->
 
 #### ✅ 1. Intégration de la sécurité dès le départ (Secure By Design)
 > La sécurité n’est plus un "étape finale", elle est intégrée dès la conception et le développement.
@@ -816,29 +809,30 @@ C'est l'**évolution naturelle du DevOps** et l'**état de l'art actuel**.
 
 ### 🔐 Principes de Secure by Design : sécurité = critère d’architecture comme la performance
 
-<!-- _class: small -->
-
-- **Moindre privilège** : chaque composant ne dispose que des droits strictement nécessaires
-- **Séparation des responsabilités** : les fonctions critiques sont isolées pour limiter les impacts
+- **Moindre privilège** : uniquement droits strictement nécessaires
+- **Séparation des responsabilités** : fonctions critiques isolées pour limiter les impacts
 - **Surface d’attaque minimale** : réduction des points d’entrée exposés
 - **Défense en profondeur** : plusieurs couches de sécurité superposées
-- **Comportement sûr par défaut** : tout ce qui n’est pas explicitement autorisé est refusé
-- **Validation stricte des entrées** : toute donnée externe est considérée comme non fiable
+- **Comportement sûr par défaut** : si pas explicitement autorisé : refusé
+- **Validation stricte des entrées** : toute donnée externe considérée comme non fiable
 - **Auditabilité** : les actions critiques sont traçables et exploitables en cas d’incident
 
 ---
 
-## 🔥 Les pires CVE des cinq dernières années (2020-2025)
+## 🔥 Les CVE les plus critiques de ces dernières années
 
-| **CVE** | **Produit/Système affecté** | **Impact / gravité** | **Pourquoi c’est marquant** |
-|---------|-----------------------------|----------------------|-----------------------------|
-| **CVE-2021-44228 — Log4Shell** | Apache Log4j | **CVSS 10.0 – RCE** | Exécution de code à distance via JNDI, exploité à grande échelle ; considéré comme l’une des vulnérabilités les plus critiques de la décennie. |
-| **CVE-2022-30190 — Follina** | Microsoft MSDT | **Critique – RCE** | Exploit facile via document Office, très utilisé en phishing/attaques post-compromission. |
-| **CVE-2022-22965 — Spring4Shell** | Spring Framework | **Critique – RCE** | Vulnérabilité dans une librairie Java très répandue, exploitée en environnement Java Cloud.  |
-| **CVE-2022-1388 — F5 BIG-IP iControl** | F5 BIG-IP | **Critique – RCE** | Failles dans les consoles d’administration réseau exposées en entreprise.  |
-| **CVE-2022-26134 — Confluence RCE** | Atlassian Confluence | **Critique – RCE** | Exploité massivement dans des attaques opportunistes sur serveurs Confluence. |
-| **CVE-2025-55182 — React2Shell** | React / Next.js | **CVSS 10.0 – RCE** | Nouvelle vulnérabilité critique touchant le rendu serveur de composants React.  |
-| **CVE-2025-32756 / CVE-2025-20333 / …** | Divers serveurs & équipements | **Critique – multiples vecteurs** | En continuum 2025, de nombreuses vulnérabilités critiques (score ~9.8-10) ont touché Cisco, SAP, Apache, etc. |
+<!-- _class: small -->
+
+Score CVSS (Common Vulnerability Scoring System) =~ 10/10 : 
+
+| **CVE** | **Produit/Système affecté** | **Pourquoi c’est marquant** |
+|---------|-----------------------------|-----------------------------|
+| **CVE-2021-44228 — Log4Shell** | Apache Log4j  | Exécution de code à distance via JNDI, exploité à grande échelle ; considéré comme l’une des vulnérabilités les plus critiques de la décennie. |
+| **CVE-2022-30190 — Follina** | Microsoft MSDT | Exploit facile via document Office, très utilisé en phishing/attaques post-compromission. |
+| **CVE-2022-1388 — F5 BIG-IP iControl** | F5 BIG-IP | Failles dans les consoles d’administration réseau exposées en entreprise.  |
+| **CVE-2022-26134 — Confluence RCE** | Atlassian Confluence  | Exploité massivement dans des attaques opportunistes sur serveurs Confluence. |
+| **CVE-2025-55182 — React2Shell** | React / Next.js  | Nouvelle vulnérabilité critique touchant le rendu serveur de composants React.  |
+| **CVE-2025-32756 / CVE-2025-20333 / …** | Divers serveurs & équipements (multiples vecteurs) | En continuum 2025, de nombreuses vulnérabilités critiques (score ~9.8-10) ont touché Cisco, SAP, Apache, etc. |
 
 ---
 
@@ -1009,8 +1003,8 @@ CMD ["npm", "start"]
 
 #### 📊 Chiffres clés
 
-- **≈120k stars** sur GitHub (projet Kubernetes)
-- **≈8 600 contributeurs actifs** (période récente, Linux Foundation Insights)
+- **≈ 120k stars** sur GitHub (projet Kubernetes)
+- **≈ 8 600 contributeurs actifs** (période récente, Linux Foundation Insights)
 - **91%** des organisations utilisent des **conteneurs en production** (CNCF Annual Survey 2024) 
 - **80% des grandes organisations dans le monde** utilisent K8S en 2025 (contre 63% en 2024) ([source CNCF](https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/?utm_source=chatgpt.com))
 
@@ -1158,7 +1152,7 @@ spec:
 
 ## 🛠️ Exemples d'outils IaC orientés provisionnement
 
-<!-- _class: smaller -->
+<!-- _class: small -->
 
 | Outil               | Éditeur / Origine         | Description principale                                 |
 |---------------------|---------------------------|--------------------------------------------------------|
@@ -1195,8 +1189,6 @@ resource "aws_instance" "web" {
 
 ## 🛠️ Outils IaC orientés Gestion de Configuration
 
-<!-- _class: small -->
-
 
 | Outil         | Mode                | Particularités                              |
 |---------------|---------------------|----------------------------------------------|
@@ -1211,7 +1203,7 @@ resource "aws_instance" "web" {
 </div>
 
 <div class="admonition info">
-  💡 Une <strong>approche conteneurs</strong> (voir plus loin) reste <strong>préférable</strong> si supportée
+  ⚠️ Une <strong>approche conteneurs</strong> (voir plus loin) reste <strong>préférable</strong> quand possible
 </div>
 
 
@@ -1258,7 +1250,7 @@ export const bucketName = bucket.id;
 
 ## 🐳 Outils IaC orientés conteneur
 
-<!-- _class: smaller -->
+<!-- _class: small -->
 
 | Outil         | Rôle principal                              | Particularités                              |
 |---------------|----------------------------------------------|----------------------------------------------|
@@ -1312,7 +1304,7 @@ patches:
 
 ### 🧾 Gestion des secrets
 
-- Ne jamais stocker de secrets (jetons, clés...) en clair dans le code source
+- Ne jamais stocker de secrets (jetons, clés...) en clair dans le code source (sauf éventuellement en DEV)
 - Utiliser des outils dédiés : **Vault**, **Sealed Secrets**, **AWS Secrets Manager**
 - Injecter les secrets via des variables d’environnement ou des volumes sécurisés
 
@@ -1512,7 +1504,6 @@ pipeline {
 ---
 ### 📋 La qualimétrie, exemple avec SonarQube
 
-<!-- _class: small -->
 
 ![width:700px](./images/qualimetrie.png)
 
@@ -1579,7 +1570,7 @@ pipeline {
 
 - Liste exhaustive des composants d’une image ou d’un build
 - Permet de retrouver facilement les dépendances, leurs versions et leurs licences **en production** (alors que le SCA ne s'applique que lors du build)
-- Requis par de plus en plus de normes/réglementations (ex : NIS2, ISO 27001, DORA, ...)
+- Requis par de plus en plus de normes/réglementations (NIS2, ISO 27001, DORA, ...)
 
 ### 📜 Provenance
 
@@ -1722,7 +1713,7 @@ Comment intégrer une analyse SCA d'un logiciel JavaScript dans un pipeline ?
 |------------------------------|------------------------------------------------------|---------------|-------------|
 | **Intégrateur applicatif**   | Assurer la compatibilité et la sécurité des dépendances | +++           | Proactif    |
 | **SysOps** | Garantir le fonctionnement quotidien des systèmes     | +             | Réactif     |
-| **DevOps** / **DevSecOps**   | Fluidifier et sécuriser le cycle Dev / Ops           | ++            | Proactif ++ |
+| **Ingénieur DevOps** / **DevSecOps**   | Fluidifier et sécuriser le cycle Dev / Ops           | ++            | Proactif ++ |
 | **SRE**                      | Améliorer la fiabilité via l’ingénierie logicielle   | +             | Proactif +++|
 
 
@@ -1772,7 +1763,7 @@ Guide des technologies à connaître pour devenir DevOps :
 
 ## 🚀 Des métiers en pleine croissance
 
-🔒 **Non délocalisables**
+🔒 **Peu délocalisables**
 
   * 🤖 Développeurs parfois remplacés par l’IA, des progiciels ou du SaaS
   * ☁️ Sysadmins souvent remplacés par des solutions cloud 
@@ -1793,7 +1784,7 @@ Guide des technologies à connaître pour devenir DevOps :
 
 En tant que futur encadrant, vous serez également responsable :
 
-- De la **maîtrise des coûts**
+- De la **maîtrise des coûts** (surtout Cloud)
 - De la **qualité de l'observabilité** et de sa **conformité réglementaire**  
 - Des **arbitrages** entre **sécurité**, **performance** et **vie privée**  
 - De l’**impact environnemental** des pratiques techniques (**écoconception**)
@@ -1820,6 +1811,12 @@ En tant que futur encadrant, vous serez également responsable :
 
 ---
 
+💰 Coût d'un bug avec la phase du projet
+
+![width:700px](./images/couts.png)
+
+---
+
 ### 🔁 Règle d’or : la **rétroaction rapide**
 
 🕐 **"10 minutes max"** : temps idéal pour un retour complet dans un pipeline
@@ -1831,11 +1828,6 @@ En tant que futur encadrant, vous serez également responsable :
 
 🚀 Une CI/CD bien conçue = investissement qui **diminue les coûts cachés**
 
----
-
-💰 Coût d'un bug avec la phase du projet
-
-![width:700px](./images/couts.png)
 
 ---
 ### 🧭 Éthique de l’observabilité

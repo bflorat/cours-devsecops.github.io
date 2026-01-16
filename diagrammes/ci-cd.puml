@@ -1,7 +1,7 @@
 @startuml CI_CD_Modern
 !include <C4/C4_Container>
 LAYOUT_TOP_DOWN()
-
+SHOW_PERSON_PORTRAIT()
 Person(dev, "Développeur", "Écrit du code, pousse les changements")
 
 System_Boundary(ci_cd, "Chaîne CI/CD") {
