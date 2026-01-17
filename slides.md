@@ -1707,7 +1707,7 @@ Comment intégrer une analyse SCA d'un logiciel JavaScript dans un pipeline ?
 - Intègre la **sécurité dans la CI/CD** (SAST, DAST, ...)
 ---
 
-## 🧩 Comparatif des rôles liés à l'intégration et à l'exploitation
+### 🧩 Comparatif des rôles liés à l'intégration et à l'exploitation
 
 | Rôle                         | Objectif principal                                  | Proximité Devs | Posture     |
 |------------------------------|------------------------------------------------------|---------------|-------------|
@@ -1719,10 +1719,10 @@ Comment intégrer une analyse SCA d'un logiciel JavaScript dans un pipeline ?
 
 ---
 
-# 🛠️ Compétences clés pour devenir DevOps
+### 🛠️ Compétences clés pour devenir DevOps
 <!-- _class: small -->
 
-## ⚙️ Compétences techniques indicatives
+#### ⚙️ Compétences techniques indicatives
 
 - **Langages de programmation** : Python, Go, Bash
 - **Systèmes d'exploitation** : **Linux**, Windows
@@ -1743,7 +1743,7 @@ Guide des technologies à connaître pour devenir DevOps :
 
 ---
 
-## 🤝 Compétences humaines
+#### 🤝 Compétences humaines
 
 - Communication & collaboration
 - Résolution de problèmes
@@ -1761,7 +1761,7 @@ Guide des technologies à connaître pour devenir DevOps :
 
 ---
 
-## 🚀 Des métiers en pleine croissance
+### 🚀 Des métiers en pleine croissance
 
 🔒 **Peu délocalisables**
 
@@ -1774,6 +1774,70 @@ Guide des technologies à connaître pour devenir DevOps :
 🛠️ **SysOps / DevOps / SRE** : essentiels à la fiabilité
 
 🔁 **Multi-rôles recherchés**  → Développement, automatisation, infra, observabilité
+
+---
+
+### 🤖 L’impact de l’IA sur les métiers SecDevOps
+
+#### 🚀 On accélère fortement sur certaines activités
+
+- Développement et mise au point **beaucoup plus rapide** de scripts (SRE, Ops)
+- Création de **petits outils, IHM, scripts** en *vibe programming*
+- Génération accélérée de manifests (Terraform, Kubernetes, Dockerfiles, pipelines CI/CD, ...)
+- Aide au **pentesting** (exploration, payloads, idées d’attaque)
+- Analyse de **volumes massifs de logs / traces / alertes**
+- Rédaction assistée de post-mortems / Root Cause Analysis, documentations opérationnelles, comptes rendus...
+  → choses souvent *repoussées ou jamais faites*
+
+👉 **Réduction drastique du coût cognitif et du temps d’exécution**
+
+---
+
+#### ❌ Risques réels
+<!-- _class: small -->
+
+- **Perte de maîtrise technique**
+  - scripts copiés sans compréhension → risque de catastrophe
+  - manifests “qui marchent” mais non compris
+- **Illusion de compétence**
+  - l’IA masque les lacunes fondamentales
+- **Biais de confiance**
+  - réponses plausibles mais fausses
+  - erreurs subtiles en sécurité / réseau / concurrence
+- **Standardisation dangereuse** (comme tout le monde utilise les mêmes IA)
+  - mêmes patterns → mêmes failles → mêmes attaques
+  - Erreurs “plausibles” souvent pires que des erreurs visibles
+  
+Ce fragment de manifest Kubernetes pour une base de données généré fonctionne à première pour vue mais en PROD, ça va faire mal...
+```yaml
+  resources: 
+     limits: 
+       memory: "256Mi"
+```
+---
+
+#### 🧭 Bonne posture face à l’IA
+<!-- _class: small -->
+
+✅ Utiliser l’IA comme :
+
+- **Précepteur** (explication, reformulation, exemples)
+- **Assistant de réflexion**, pas décideur
+- **Accélérateur**, pas substitut
+
+✅ Pour rester compétent :
+
+- Pratiquer le **shell tous les jours**
+- Savoir écrire un script **sans IA**
+- Lire et comprendre :
+  - logs bruts
+  - manifests YAML
+  - erreurs kernel / réseau
+- Travailler son **intuition opérationnelle**
+  - l’IA est **faible** sur :
+    - signaux faibles
+    - incidents atypiques
+    - contextes humains / organisationnels
 
 ---
 
@@ -1921,7 +1985,7 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 
 ---
 
-## 🧭 Gouvernance de la sécurité dans l’équipe
+### 🧭 Gouvernance de la sécurité dans l’équipe
 
 - Clarifier les responsabilités : **qui fait quoi en sécurité ?**  
 - Mettre en place des **rituels sécurité** : revue de code, threat modeling, revue des exceptions CVE, ...  
@@ -1930,7 +1994,7 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 
 ---
 
-## 🧑‍🤝‍🧑 Rôles dans l’équipe
+### 🧑‍🤝‍🧑 Rôles dans l’équipe
 
 -  **Développeurs** : appliquent les bonnes pratiques de codage sécurisé  
 -  **DevOps / SRE** : gèrent la sécurité infra, secrets, CI/CD  
@@ -1939,7 +2003,7 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 
 ---
 
-## 🛠️ Choix technologiques orientés sécurité
+### 🛠️ Choix technologiques orientés sécurité
 
 -  Frameworks avec protections intégrées (CSRF, XSS, injections...)  
 -  Authentification et chiffrement dès la conception  
@@ -1948,7 +2012,7 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 
 ---
 
-## 🧠 Culture sécurité by design
+### 🧠 Culture sécurité by design
 
 -  Sécurité = qualité → **intégrée dès le départ** (« Shift to the Left »)  
 -  **User stories** incluant sécurité (ex : rôles, gestion des données sensibles)  
@@ -1957,7 +2021,7 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 
 ---
 
-## 🧑‍💼 Sécurité au quotidien
+### 🧑‍💼 Sécurité au quotidien
 
 -  Exemples de **rituels** :  
    *  Atelier **“Sécurité du mois”** (présentation d'un problème de PROD par exemple)
@@ -1967,7 +2031,7 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 
 ---
 
-## 🧭 Posture de l’encadrant responsable
+### 🧭 Posture de l’encadrant responsable
 
 -  Cultiver un climat de confiance : “on peut parler de faille sans crainte”, **blameless**.
 -  Rendre la sécurité **visible** : KPIs, alertes, dashboards  
