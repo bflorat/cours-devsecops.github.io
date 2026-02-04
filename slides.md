@@ -2043,3 +2043,4 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 - [HackTricks](https://book.hacktricks.xyz/) : encyclopédie sécurité offensive/défensive  
 - Cybrary, Root Me, TryHackMe... : entraînement pratique (CTF, labs)
 - Micode "[la Fabrique à idiots (2026)](https://www.youtube.com/watch?v=4xq6bVbS-Pw)" : Documentaire sur l'utilisation de l'IA pour coder
+- Unesco "[Guidance for generative AI in education and research](https://unesdoc.unesco.org/ark:/48223/pf0000386693)" (2023)
