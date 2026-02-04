@@ -2042,3 +2042,4 @@ Elle se construit dans la **culture d’équipe** et les **choix technologiques*
 - [CNCF Security TAG](https://github.com/cncf/tag-security) : bonnes pratiques cloud native  
 - [HackTricks](https://book.hacktricks.xyz/) : encyclopédie sécurité offensive/défensive  
 - Cybrary, Root Me, TryHackMe... : entraînement pratique (CTF, labs)
+- Micode "[la Fabrique à idiots (2026)](https://www.youtube.com/watch?v=4xq6bVbS-Pw)" : Documentaire sur l'utilisation de l'IA pour coder
