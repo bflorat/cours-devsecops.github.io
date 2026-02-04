@@ -1250,7 +1250,7 @@ export const bucketName = bucket.id;
 
 ## 🐳 Outils IaC orientés conteneur
 
-<!-- _class: small -->
+<!-- _class: smaller -->
 
 | Outil         | Rôle principal                              | Particularités                              |
 |---------------|----------------------------------------------|----------------------------------------------|
@@ -1453,13 +1453,13 @@ deploy-job:
 
 ## ⚙️ Jenkins : le vétéran de la CI/CD
 
-- 🧑‍🔧 Jenkins est un outil open-source d’intégration continue (CI)  
-- 🧱 Très modulaire, basé sur des **plugins** (plus de 1800 !)  
-- ⚙️ Pipelines décrits par un DSL (Domain Specific Language) basé sur Groovy
+* Jenkins est un outil open-source d’intégration continue (CI)  
+* Très modulaire, basé sur des **plugins** (plus de 1800 !)  
+* Pipelines décrits par un DSL (Domain Specific Language) basé sur Groovy
   * DSL déclaratif (plus simple, structuré) → `pipeline { ... }`
   * DSL scripté (plus flexible, moins lisible) → `node { ... }`
-- 🌍 Déploiement sur serveur (local ou cloud), UI web 
-- 🛠️ Configuration possible par UI **ou via code (Jenkinsfile)**
+* Déploiement sur serveur (local ou cloud), UI web 
+* Configuration possible par UI **ou via code (Jenkinsfile)**
 
 <div class="admonition info">
   💡 A moins d'être sur une CI-CD historique, préférer Gitlab-CI ou d'autres CI plus modernes pour éviter le plugin-hell (plugins instables et incompatibles) bien qu'il soit possible de coder des jobs en bash...
@@ -1713,8 +1713,8 @@ Comment intégrer une analyse SCA d'un logiciel JavaScript dans un pipeline ?
 |------------------------------|------------------------------------------------------|---------------|-------------|
 | **Intégrateur applicatif**   | Assurer la compatibilité et la sécurité des dépendances | +++           | Proactif    |
 | **SysOps** | Garantir le fonctionnement quotidien des systèmes     | +             | Réactif     |
-| **Ingénieur DevOps** / **DevSecOps**   | Fluidifier et sécuriser le cycle Dev / Ops           | ++            | Proactif ++ |
-| **SRE**                      | Améliorer la fiabilité via l’ingénierie logicielle   | +             | Proactif +++|
+| **Ingénieur DevOps** / **DevSecOps**   | Fluidifier et sécuriser le cycle Dev / Ops           | ++            | Proactif++ |
+| **SRE**                      | Améliorer la fiabilité via l’ingénierie logicielle   | +             | Proactif+++|
 
 
 ---
@@ -1805,8 +1805,7 @@ Guide des technologies à connaître pour devenir DevOps :
   - réponses plausibles mais fausses
   - erreurs subtiles en sécurité / réseau / concurrence
 - **Standardisation dangereuse** (comme tout le monde utilise les mêmes IA)
-  - mêmes patterns → mêmes failles → mêmes attaques
-  - Erreurs “plausibles” souvent pires que des erreurs visibles
+  - mêmes patterns → mêmes failles → mêmes attaques  
   
 Ce fragment de manifest Kubernetes pour une base de données généré fonctionne à première pour vue mais en PROD, ça va faire mal...
 ```yaml
@@ -1827,12 +1826,8 @@ Ce fragment de manifest Kubernetes pour une base de données généré fonctionn
 
 ✅ Pour rester compétent :
 
-- Pratiquer le **shell tous les jours**
 - Savoir écrire un script **sans IA**
-- Lire et comprendre :
-  - logs bruts
-  - manifests YAML
-  - erreurs kernel / réseau
+- Lire et comprendre : logs bruts, manifests YAML, erreurs kernel / réseau...
 - Travailler son **intuition opérationnelle**
   - l’IA est **faible** sur :
     - signaux faibles
@@ -1928,7 +1923,7 @@ Le rôle de l’encadrant inclut également une **responsabilité environnementa
 ## 🎓 3.3 La Formation continue
 
 <div class="admonition warning">
-  ⚠️ Dans le monde du DevSecOps, les technologies évoluent encore plus vite que dans le domaine du code. Des formations régulières sont indispensables. Prévoir <i>a minima</i> des <b>MOOCs</b> (Udemy, Coursera, edX...) réguliers.
+  ⚠️ Dans le monde du DevSecOps, les technologies évoluent encore plus vite que dans le domaine du DEV. Des formations régulières sont indispensables. Prévoir <i>a minima</i> des <b>MOOCs</b> (Udemy, Coursera, edX...) réguliers.
 </div>
 
 ### Certifications clés dans le cloud, le DevOps et la sécurité

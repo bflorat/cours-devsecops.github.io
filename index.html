@@ -83,7 +83,7 @@ section.smaller {
 <h2 id="universit%C3%A9-de-nantes-miage-m2">Université de Nantes, MIAGE, M2</h2>
 <p>© 2025-2026 Bertrand Florat</p>
 <p>Ce document est sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International</a> (CC BY-SA 4.0)</p>
-<p>Révision : <code>d3e81f0</code> du 2026-01-18 - <a href="slidesDevSecOps.pdf">Version PDF</a></p>
+<p>Révision : <code>5e86857</code> du 2026-02-04 - <a href="slidesDevSecOps.pdf">Version PDF</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
   width: 1280px;
@@ -9012,7 +9012,7 @@ section.smaller {
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> bucketName = bucket.<span class="hljs-property">id</span>;
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="97" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="small" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="97" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-class="smaller" data-style="section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -9047,7 +9047,7 @@ section.small {
 section.smaller {
   font-size: 1.2em;
 }
-" lang="en-US" class="small" data-marpit-pagination="97" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:small;--style:section {
+" lang="en-US" class="smaller" data-marpit-pagination="97" style="--paginate:true;--background-image:none;--background-size:cover;--color:#555555;--class:smaller;--style:section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -10295,7 +10295,7 @@ section.smaller {
 <p><img src="./images/GitLab-Pipeline.png" alt="" style="width:700px;" /></p>
 <p><a href="https://about.gitlab.com/blog/guide-to-ci-cd-pipelines/">Source</a> : gitlab.com</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="111" data-marpit-fragments="2" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="111" data-marpit-fragments="7" data-paginate="true" data-background-image="none" data-background-size="cover" data-color="#555555" data-style="section {
   width: 1280px;
   height: 720px;
   font-size: 28px;
@@ -10368,16 +10368,16 @@ section.smaller {
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="154" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
 <h2 id="%E2%9A%99%EF%B8%8F-jenkins--le-v%C3%A9t%C3%A9ran-de-la-cicd"><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> Jenkins : le vétéran de la CI/CD</h2>
 <ul>
-<li><img class="emoji" draggable="false" alt="🧑‍🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f9d1-200d-1f527.svg" data-marp-twemoji=""/> Jenkins est un outil open-source d’intégration continue (CI)</li>
-<li><img class="emoji" draggable="false" alt="🧱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f9f1.svg" data-marp-twemoji=""/> Très modulaire, basé sur des <strong>plugins</strong> (plus de 1800 !)</li>
-<li><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2699.svg" data-marp-twemoji=""/> Pipelines décrits par un DSL (Domain Specific Language) basé sur Groovy
+<li data-marpit-fragment="1">Jenkins est un outil open-source d’intégration continue (CI)</li>
+<li data-marpit-fragment="2">Très modulaire, basé sur des <strong>plugins</strong> (plus de 1800 !)</li>
+<li data-marpit-fragment="3">Pipelines décrits par un DSL (Domain Specific Language) basé sur Groovy
 <ul>
-<li data-marpit-fragment="1">DSL déclaratif (plus simple, structuré) → <code>pipeline { ... }</code></li>
-<li data-marpit-fragment="2">DSL scripté (plus flexible, moins lisible) → <code>node { ... }</code></li>
+<li data-marpit-fragment="4">DSL déclaratif (plus simple, structuré) → <code>pipeline { ... }</code></li>
+<li data-marpit-fragment="5">DSL scripté (plus flexible, moins lisible) → <code>node { ... }</code></li>
 </ul>
 </li>
-<li><img class="emoji" draggable="false" alt="🌍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f30d.svg" data-marp-twemoji=""/> Déploiement sur serveur (local ou cloud), UI web</li>
-<li><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f6e0.svg" data-marp-twemoji=""/> Configuration possible par UI <strong>ou via code (Jenkinsfile)</strong></li>
+<li data-marpit-fragment="6">Déploiement sur serveur (local ou cloud), UI web</li>
+<li data-marpit-fragment="7">Configuration possible par UI <strong>ou via code (Jenkinsfile)</strong></li>
 </ul>
 <div class="admonition info">
   💡 A moins d'être sur une CI-CD historique, préférer Gitlab-CI ou d'autres CI plus modernes pour éviter le plugin-hell (plugins instables et incompatibles) bien qu'il soit possible de coder des jobs en bash...
@@ -11751,13 +11751,13 @@ section.smaller {
 <td><strong>Ingénieur DevOps</strong> / <strong>DevSecOps</strong></td>
 <td>Fluidifier et sécuriser le cycle Dev / Ops</td>
 <td>++</td>
-<td>Proactif ++</td>
+<td>Proactif++</td>
 </tr>
 <tr>
 <td><strong>SRE</strong></td>
 <td>Améliorer la fiabilité via l’ingénierie logicielle</td>
 <td>+</td>
-<td>Proactif +++</td>
+<td>Proactif+++</td>
 </tr>
 </tbody>
 </table>
@@ -12339,7 +12339,6 @@ section.smaller {
 <li><strong>Standardisation dangereuse</strong> (comme tout le monde utilise les mêmes IA)
 <ul>
 <li>mêmes patterns → mêmes failles → mêmes attaques</li>
-<li>Erreurs “plausibles” souvent pires que des erreurs visibles</li>
 </ul>
 </li>
 </ul>
@@ -12430,15 +12429,8 @@ section.smaller {
 </ul>
 <p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Pour rester compétent :</p>
 <ul>
-<li>Pratiquer le <strong>shell tous les jours</strong></li>
 <li>Savoir écrire un script <strong>sans IA</strong></li>
-<li>Lire et comprendre :
-<ul>
-<li>logs bruts</li>
-<li>manifests YAML</li>
-<li>erreurs kernel / réseau</li>
-</ul>
-</li>
+<li>Lire et comprendre : logs bruts, manifests YAML, erreurs kernel / réseau...</li>
 <li>Travailler son <strong>intuition opérationnelle</strong>
 <ul>
 <li>l’IA est <strong>faible</strong> sur :
@@ -13107,7 +13099,7 @@ section.smaller {
 ;color:#555555;background-image:none;background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-pagination-total="154" data-transition-back="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}" data-transition="{&quot;name&quot;:&quot;push&quot;,&quot;builtinFallback&quot;:true}">
 <h2 id="%F0%9F%8E%93-33-la-formation-continue"><img class="emoji" draggable="false" alt="🎓" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f393.svg" data-marp-twemoji=""/> 3.3 La Formation continue</h2>
 <div class="admonition warning">
-  ⚠️ Dans le monde du DevSecOps, les technologies évoluent encore plus vite que dans le domaine du code. Des formations régulières sont indispensables. Prévoir <i>a minima</i> des <b>MOOCs</b> (Udemy, Coursera, edX...) réguliers.
+  ⚠️ Dans le monde du DevSecOps, les technologies évoluent encore plus vite que dans le domaine du DEV. Des formations régulières sont indispensables. Prévoir <i>a minima</i> des <b>MOOCs</b> (Udemy, Coursera, edX...) réguliers.
 </div>
 <h3 id="certifications-cl%C3%A9s-dans-le-cloud-le-devops-et-la-s%C3%A9curit%C3%A9">Certifications clés dans le cloud, le DevOps et la sécurité</h3>
 <blockquote>
